@@ -29,6 +29,11 @@ export const { styled, getCssText } = createStitches({
       light: 400,
       regular: 500,
       heavy: 700,
-    }
+    },
   },
+  media: {
+    sm: '(min-width: 640px)',
+    md: '(min-width: 768px)',
+    xl: '(min-width: 1024px)',
+  }
 });
