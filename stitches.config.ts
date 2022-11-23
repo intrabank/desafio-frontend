@@ -1,9 +1,9 @@
 import { createStitches } from '@stitches/react';
 
-export const { styled, getCssText } = createStitches({
+export const { styled, globalCss, getCssText } = createStitches({
   theme: {
     fonts: {
-      system: 'system-ui',
+      default: 'poppins'
     },
     colors: {
       hiContrast: 'hsl(206,10%,5%)',
@@ -13,6 +13,7 @@ export const { styled, getCssText } = createStitches({
       gray300: '#414141',
       gray400: '#2A2A2A',
       gray500: '#202020',
+      gray600: '#121212',
       seaGreen: '#00F2B1',
       skyBlue: '#47E0FF',
       redSalsa: '#FA4D56',

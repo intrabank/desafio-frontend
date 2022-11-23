@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { InputConsentment } from "./input-consentment";
 import { InputField } from "./input-field"
 
 interface FormData {
@@ -128,15 +129,24 @@ export function Form() {
 
       <input type="submit" value="Cadastrar" />
 
-      <label htmlFor="receiveNotifications">
+      {/* <label htmlFor="receiveNotifications">
         Desejo receber notificações
         <input
           type="checkbox"
           id="receiveNotifications"
           name="receiveNotifications"
           onChange={handleChange} />
-      </label>
+      </label> */}
 
+      <InputConsentment
+        type="checkbox"
+        checked={inputs.receiveNotifications || false}
+        id="receiveNotifications"
+        name="receiveNotifications"
+        label="Desejo receber notificações"
+        onChange={handleChange}
+        required={true}
+      />
     </form>
   )
 }
