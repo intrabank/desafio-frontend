@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { InputButton } from "./input-button";
 import { InputConsentment } from "./input-consentment";
 import { InputField } from "./input-field"
 import { InputSelect } from "./input-select";
@@ -130,8 +131,8 @@ export function Form() {
         required={true}
         onChange={handleChange}
       />
-
-      <input type="submit" value="Cadastrar" />
+      
+      <InputButton type="submit" value="Cadastrar"/>
 
       <InputConsentment
         type="checkbox"
