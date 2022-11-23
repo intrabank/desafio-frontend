@@ -1,18 +1,19 @@
 import { useState } from "react";
+import { InputField } from "./input-field"
+
+interface FormData {
+  firstName: string,
+  lastName: string,
+  email: string,
+  birthday: string,
+  password: string,
+  country: string,
+  bio: string,
+  receiveNotifications: boolean,
+}
 
 export function Form() {
   
-  interface FormData {
-    firstName: string,
-    lastName: string,
-    email: string,
-    birthday: Date,
-    password: string,
-    country: string,
-    bio: string,
-    receiveNotifications: boolean,
-  }
-
   const [inputs, setInputs] = useState<FormData>({} as FormData)
 
   const handleChange = (event: React.FormEvent) => {
@@ -41,65 +42,60 @@ export function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-
-      <label htmlFor="firstName">
-        Nome
-        <input
-          type="text"
-          id="firstName"
-          name="firstName"
-          placeholder="Nome"
-          required
-          onChange={handleChange} />
-      </label>
+      <InputField 
+        type="text"
+        value={inputs.firstName || ''}
+        placeholder="Nome"
+        id="firstName"
+        name="firstName"
+        label="Nome"
+        onChange={handleChange}
+        required={true}
+      />
       <br />
-
-      <label htmlFor="lastName">
-        Sobrenome
-        <input
-          type="text"
-          id="lastName"
-          name="lastName"
-          placeholder="Sobrenome"
-          required
-          onChange={handleChange} />
-      </label>
+      <InputField 
+        type="text"
+        value={inputs.lastName || ''}
+        placeholder="Sobrenome"
+        id="lastName"
+        name="lastName"
+        label="Sobrenome"
+        onChange={handleChange}
+        required={true}
+      />
       <br />
-
-      <label htmlFor="email">
-        E-mail
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="E-mail"
-          required
-          onChange={handleChange} />
-      </label>
+      <InputField 
+        type="email"
+        value={inputs.email || ''}
+        placeholder="E-mail"
+        id="email"
+        name="email"
+        label="E-mail"
+        onChange={handleChange}
+        required={true}
+      />
       <br />
-
-      <label htmlFor="birthday">
-        Data de nascimento
-        <input
-          type="date"
-          id="birthday"
-          name="birthday"
-          placeholder="Data de nascimento"
-          required
-          onChange={handleChange} />
-      </label>
+      <InputField 
+        type="date"
+        value={inputs.birthday || ''}
+        placeholder="Data de nascimento"
+        id="birthday"
+        name="birthday"
+        label="Data de nascimento"
+        onChange={handleChange}
+        required={true}
+      />
       <br />
-
-      <label htmlFor="password">
-        Senha
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Senha"
-          required
-          onChange={handleChange} />
-      </label>
+      <InputField 
+        type="password"
+        value={inputs.password || ''}
+        placeholder="Senha"
+        id="password"
+        name="password"
+        label="Senha"
+        onChange={handleChange}
+        required={true}
+      />
       <br />
 
       <label htmlFor="countries">
