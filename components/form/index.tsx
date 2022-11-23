@@ -28,7 +28,7 @@ export function Form() {
 
   const handleSubmit = (event: React.SyntheticEvent): void => {
     event.preventDefault()
-    console.log(
+    alert(
       `Cadastro realizado com sucesso.
       Nome: ${inputs.firstName}
       Sobrenome: ${inputs.lastName}
@@ -145,7 +145,7 @@ export function Form() {
         name="receiveNotifications"
         label="Desejo receber notificações"
         onChange={handleChange}
-        required={true}
+        required={false}
       />
     </form>
   )
