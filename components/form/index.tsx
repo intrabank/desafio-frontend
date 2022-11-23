@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InputConsentment } from "./input-consentment";
 import { InputField } from "./input-field"
+import { InputTextarea } from "./input-textarea";
 
 interface FormData {
   firstName: string,
@@ -99,7 +100,7 @@ export function Form() {
       />
       <br />
 
-      <label htmlFor="countries">
+      {/* <label htmlFor="countries">
         Selecione seu país
         <select
           id="countries"
@@ -112,31 +113,20 @@ export function Form() {
           <option value="au">Austrália</option>
         </select>
       </label>
-      <br />
+      <br /> */}
 
-      <label htmlFor="bio">
-        Bio
-        <textarea
-          name="bio"
-          id="bio"
-          cols={30}
-          rows={5}
-          required
-          onChange={handleChange}>
-        </textarea>
-      </label>
-      <br />
+      <InputTextarea 
+        name="bio"
+        id="bio"
+        value={inputs.bio || ""}
+        cols={30}
+        rows={3}
+        label="Bio"
+        required={true}
+        onChange={handleChange}
+      />
 
       <input type="submit" value="Cadastrar" />
-
-      {/* <label htmlFor="receiveNotifications">
-        Desejo receber notificações
-        <input
-          type="checkbox"
-          id="receiveNotifications"
-          name="receiveNotifications"
-          onChange={handleChange} />
-      </label> */}
 
       <InputConsentment
         type="checkbox"
