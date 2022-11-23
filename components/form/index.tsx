@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InputConsentment } from "./input-consentment";
 import { InputField } from "./input-field"
+import { InputSelect } from "./input-select";
 import { InputTextarea } from "./input-textarea";
 
 interface FormData {
@@ -13,6 +14,14 @@ interface FormData {
   bio: string,
   receiveNotifications: boolean,
 }
+
+const options = [{
+  label:"Brasil",
+  value:"BR",
+},{
+  label:"Japão",
+  value:"JP",
+}]
 
 export function Form() {
   
@@ -100,20 +109,16 @@ export function Form() {
       />
       <br />
 
-      {/* <label htmlFor="countries">
-        Selecione seu país
-        <select
-          id="countries"
-          name="country"
-          required
-          onChange={handleChange}>
-          <option value="br">Brasil</option>
-          <option value="us">Estados Unidos</option>
-          <option value="jp">Japão</option>
-          <option value="au">Austrália</option>
-        </select>
-      </label>
-      <br /> */}
+      <InputSelect 
+        id="countries"
+        value={inputs.country || ''}
+        name="country"
+        label="Selecione seu país"
+        options={options}
+        required={true}
+        onChange={handleChange}
+      />
+      <br />
 
       <InputTextarea 
         name="bio"
