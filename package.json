@@ -13,7 +13,7 @@
 		"test:unit:watch": "jest --watch",
 		"test:e2e": "start-server-and-test dev http://localhost:3000 cypress",
 		"cypress": "cypress open",
-		"commit": "git-cz"
+		"commit": "cz"
 	},
 	"dependencies": {
 		"@radix-ui/react-popover": "1.0.2",
