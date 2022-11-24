@@ -8,7 +8,174 @@ import { InputField } from "../../components"
 import { InputSelect } from "../../components";
 import { InputTextarea } from "../../components";
 
-const Text = styled('p', {})
+const Text = styled('p', {
+  variants: {
+    size: {
+      large: {
+        fontSize: '$5'
+      },
+      medium: {
+        fontSize: '$4'
+      },
+      regular: {
+        fontSize: '$3'
+      },
+      small: {
+        fontSize: '$2'
+      },
+      tiny: {
+        fontSize: '$1'
+      }
+    },
+    color: {
+      white: {
+        color: 'white',
+      },
+      light: {
+        color: '$gray100'
+      },
+      gray: {
+        color: '$gray200'
+      }
+    },
+    weight: {
+      heavy: {
+        fontWeight: '$heavy'
+      },
+      regular: {
+        fontWeight: '$regular'
+      },
+      light: {
+        fontWeight: '$light'
+      },
+      thin: {
+        fontWeight: '$thin'
+      },
+    },
+    align: {
+      left: {
+        textAlign: 'left'
+      },
+      center: {
+        textAlign: 'center'
+      },
+      right: {
+        textAlign: 'right'
+      },
+    }
+  }
+})
+
+const BackgroundBox = styled('div', {
+  variants: {
+    media: {
+      xl: {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignContent: 'start',
+        flexDirection: 'row-reverse',
+        padding: '88px 5%',
+      },
+      md: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        gap: 48,
+        padding: '77px 5% 77px 5%',
+      },
+      sm: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        gap: 48,
+        padding: '77px 5% 77px 5%',
+      },
+    }
+  }
+})
+
+const Box = styled('div', {
+  variants: {
+    usage: {
+      box: {
+        flex: 1,
+        alignSelf: 'center',
+        border: '$gray400 solid 1px',
+        borderRadius: 8,
+        padding: '54px 5%',
+        width: '100%',
+        maxWidth: 600,
+      },
+    }
+  }
+})
+
+const BackgroundImage = styled('div', {
+  backgroundImage: 'url("/globe.svg")',
+  backgroundRepeat: 'no-repeat',
+  position: 'fixed',
+  right: 0,
+  top: 0,
+  width: '50vw',
+  height: '100vh',
+  zIndex: '-1',
+})
+
+const Stack = styled('div', {
+  // border: '$redSalsa solid 1px',
+  display: 'flex',
+  flexDirection: 'column',
+  height: 'fit-content',
+  width: '100%',
+  variants: {
+    size: {
+      large: {
+        gap: '32px',
+      },
+      medium: {
+        maxWidth: '320px',
+        gap: '16px',
+      },
+      small: {
+        gap: '8px'
+      }
+    },
+    media: {
+      sm: {
+        flex: 1,
+        alignSelf: 'center',
+        [`& > ${Text}`]: {
+          textAlign: 'center',
+        },
+        [`& > svg`]: {
+          alignSelf: 'center',
+        },
+      },
+      md: {
+        flex: 1,
+        alignSelf: 'center',
+        [`& > ${Text}`]: {
+          textAlign: 'center',
+        },
+        [`& > svg`]: {
+          alignSelf: 'center',
+        },
+      },
+      xl: {
+        flex: 1,
+        position: 'sticky',
+        top: '30vh',
+        alignSelf: 'auto',
+        [`& > ${Text}`]: {
+          textAlign: 'left',
+        },
+        [`& > svg`]: {
+          alignSelf: 'start',
+        },
+      },
+    }
+  }
+})
 
 const Form = styled('form', {
   display: 'flex',
@@ -70,101 +237,156 @@ const Register: NextPage = () => {
         <title>Intrabank | Cadastre-se</title>
         <meta name="description" content="Desafio Frontend Intrabank" />
       </Head>
-      <main>
-        <Text as={"h1"}>Cadastre-se</Text>
-        <p>Para começar, insira os dados abaixo:</p>
+      <BackgroundImage />
+      
+      <BackgroundBox media={{
+        "@initial": "sm",
+        "@md": "md",
+        "@xl": "xl",
+      }}>
+      
+        <Stack size={"medium"} media={{
+          "@initial": "sm",
+          "@md": "md",
+          "@xl": "xl",
+        }}>
+          <Text
+            size={"large"}
+            weight={"heavy"}
+            align={"left"}
+          >Teste Técnico</Text>
 
-        <Form onSubmit={handleSubmit}>
-          <InputField
-            type="text"
-            value={inputs.firstName || ''}
-            placeholder="Nome"
-            id="firstName"
-            name="firstName"
-            label="Nome"
-            onChange={handleChange}
-            required={true}
-          />
+          <svg
+            width="43"
+            height="11"
+            viewBox="0 0 43 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect
+              width="43"
+              height="11"
+              rx="5.5"
+              fill="#00F2B1" />
+          </svg>
 
-          <InputField
-            type="text"
-            value={inputs.lastName || ''}
-            placeholder="Sobrenome"
-            id="lastName"
-            name="lastName"
-            label="Sobrenome"
-            onChange={handleChange}
-            required={true}
-          />
+          <Text
+            size={"regular"}
+            weight={"light"}
+            align={"left"}
+          >Controle suas contas nacionais
+            e internacionais em um único lugar!</Text>
+        </Stack>
 
-          <InputField
-            type="email"
-            value={inputs.email || ''}
-            placeholder="E-mail"
-            id="email"
-            name="email"
-            label="E-mail"
-            onChange={handleChange}
-            required={true}
-          />
+        <Box usage={"box"}>
 
-          <InputField
-            type="date"
-            value={inputs.birthday || ''}
-            placeholder="Data de nascimento"
-            id="birthday"
-            name="birthday"
-            label="Data de nascimento"
-            onChange={handleChange}
-            required={true}
-          />
+          <Stack size={"large"}>
 
-          <InputField
-            type="password"
-            value={inputs.password || ''}
-            placeholder="Senha"
-            id="password"
-            name="password"
-            label="Senha"
-            onChange={handleChange}
-            required={true}
-          />
+            <Stack size={"small"}>
+              <Text
+                size={"medium"}
+                weight={"heavy"}
+                align={"center"}
+              >Cadastre-se</Text>
+              <Text
+                size={"small"}
+                weight={"thin"}
+                align={"center"}
+              >Para começar, insira os dados abaixo:</Text>
+            </Stack>
 
-          <InputSelect
-            id="countries"
-            value={inputs.country || ''}
-            name="country"
-            label="Selecione seu país"
-            options={options}
-            required={true}
-            onChange={handleChange}
-          />
+            <Form onSubmit={handleSubmit}>
+              <InputField
+                type="text"
+                value={inputs.firstName || ''}
+                placeholder="Nome"
+                id="firstName"
+                name="firstName"
+                label="Nome"
+                onChange={handleChange}
+                required={true}
+              />
 
-          <InputTextarea
-            name="bio"
-            id="bio"
-            value={inputs.bio || ""}
-            cols={30}
-            rows={3}
-            label="Bio"
-            required={true}
-            onChange={handleChange}
-          />
+              <InputField
+                type="text"
+                value={inputs.lastName || ''}
+                placeholder="Sobrenome"
+                id="lastName"
+                name="lastName"
+                label="Sobrenome"
+                onChange={handleChange}
+                required={true}
+              />
 
-          <InputButton type="submit" value="Cadastrar" />
+              <InputField
+                type="email"
+                value={inputs.email || ''}
+                placeholder="E-mail"
+                id="email"
+                name="email"
+                label="E-mail"
+                onChange={handleChange}
+                required={true}
+              />
 
-          <InputConsentment
-            type="checkbox"
-            checked={inputs.receiveNotifications || false}
-            id="receiveNotifications"
-            name="receiveNotifications"
-            label="Desejo receber notificações"
-            onChange={handleChange}
-            required={false}
-          />
-        </Form>
+              <InputField
+                type="date"
+                value={inputs.birthday || ''}
+                placeholder="Data de nascimento"
+                id="birthday"
+                name="birthday"
+                label="Data de nascimento"
+                onChange={handleChange}
+                required={true}
+              />
 
-      </main>
+              <InputField
+                type="password"
+                value={inputs.password || ''}
+                placeholder="Senha"
+                id="password"
+                name="password"
+                label="Senha"
+                onChange={handleChange}
+                required={true}
+              />
+
+              <InputSelect
+                id="countries"
+                value={inputs.country || ''}
+                name="country"
+                label="Selecione seu país"
+                options={options}
+                required={true}
+                onChange={handleChange}
+              />
+
+              <InputTextarea
+                name="bio"
+                id="bio"
+                value={inputs.bio || ""}
+                cols={30}
+                rows={3}
+                label="Bio"
+                required={true}
+                onChange={handleChange}
+              />
+
+              <InputButton type="submit" value="Cadastrar" />
+
+              <InputConsentment
+                type="checkbox"
+                checked={inputs.receiveNotifications || false}
+                id="receiveNotifications"
+                name="receiveNotifications"
+                label="Desejo receber notificações"
+                onChange={handleChange}
+                required={false}
+              />
+            </Form>
+          </Stack>
+        </Box>
+
+      </BackgroundBox>
     </>
   )
 }
