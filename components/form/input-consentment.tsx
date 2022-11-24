@@ -11,9 +11,9 @@ interface InputProps {
 }
 
 const CheckMark = styled('span', {
-  position: 'absolute',
-  top: 0,
-  left: 0,
+  // position: 'absolute',
+  // top: 0,
+  // left: 0,
   height: '20px',
   width: '20px',
   backgroundColor: 'transparent',
@@ -30,28 +30,28 @@ const CheckMark = styled('span', {
   }
 })
 const Input = styled('input', {
-  position: 'absolute',
+  // position: 'absolute',
   opacity: 0,
   cursor: 'pointer',
   height: 0,
   width: 0,
 })
+
+const Label = styled('label', {
+  cursor: 'pointer',
+  paddingLeft: '8px',
+  color: '$gray200',
+})
+
 const InputBox = styled('div', {
-  display: 'block',
-  position: 'relative',
-  paddingLeft: '0px',
+  display: 'flex',
+  width: 'fit-content',
+  alignSelf: 'center',
+  marginTop: '8px',
   cursor: 'pointer',
   fontSize: '$2',
-  // userSelect: 'none',
   [`& ${CheckMark}:after > svg`]: {
     display: 'block',
-    // left: '9px',
-    // top: '5px',
-    // width: '5px',
-    // height: '10px',
-    // border: 'solid $gray700',
-    // borderWidth: '0 3px 3px 0',
-    // transform: 'rotate(45deg)'
   },
   [`&:hover > ${CheckMark}`]: {
     backgroundColor: '$gray400'
@@ -68,15 +68,6 @@ const InputBox = styled('div', {
   },
 })
 
-const Label = styled('label', {
-  // display: 'inline-block',
-  position: 'absolute',
-  cursor: 'pointer',
-  // backgroundColor: '$redSalsa',
-  paddingLeft: '35px',
-  // marginLeft: '8px',
-  color: '$gray200',
-})
 
 
 export const InputConsentment = ({ type, id, name, label, required, checked, onChange }: InputProps) => {
