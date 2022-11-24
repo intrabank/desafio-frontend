@@ -11,11 +11,9 @@ interface InputProps {
 }
 
 const CheckMark = styled('span', {
-  // position: 'absolute',
-  // top: 0,
-  // left: 0,
   height: '20px',
   width: '20px',
+  marginRight: '8px',
   backgroundColor: 'transparent',
   border: 'solid 1px',
   borderColor: '$gray100',
@@ -30,7 +28,6 @@ const CheckMark = styled('span', {
   }
 })
 const Input = styled('input', {
-  // position: 'absolute',
   opacity: 0,
   cursor: 'pointer',
   height: 0,
@@ -38,13 +35,12 @@ const Input = styled('input', {
 })
 
 const Label = styled('label', {
+  display: 'flex',
   cursor: 'pointer',
-  paddingLeft: '8px',
   color: '$gray200',
 })
 
 const InputBox = styled('div', {
-  display: 'flex',
   width: 'fit-content',
   alignSelf: 'center',
   marginTop: '8px',
@@ -73,6 +69,7 @@ const InputBox = styled('div', {
 export const InputConsentment = ({ type, id, name, label, required, checked, onChange }: InputProps) => {
   return (
     <InputBox>
+        <Label htmlFor={name}>
       <Input
         type={type}
         checked={checked}
@@ -85,7 +82,7 @@ export const InputConsentment = ({ type, id, name, label, required, checked, onC
           <path d="M13 4.5625L6.125 11.4375L3 8.3125" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </CheckMark>
-      <Label htmlFor={name}>{label}</Label>
+        {label}</Label>
     </InputBox>
 
   )

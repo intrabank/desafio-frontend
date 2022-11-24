@@ -15,7 +15,7 @@ const Form = styled('form', {
   flexDirection: 'column',
   justifyContent: 'center',
   gap: '16px',
-  border: 'solid 1px $redSalsa'
+  // border: 'solid 1px $redSalsa'
 })
 
 interface FormData {
@@ -45,7 +45,7 @@ const Register: NextPage = () => {
     const type = target.type
     const name = target.name
     const value = target.value
-    const checked = target.checked
+    const checked = target.checked || false
     setInputs(values => ({ ...values, [name]: type === 'checkbox' ? checked : value }))
   }
 
