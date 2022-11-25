@@ -13,5 +13,5 @@ export interface FormData {
 
 export const registerUser = async (inputs: FormData) => {
   const res = await axios.post("https://637f50932f8f56e28e87af4a.mockapi.io/challenge", inputs)
-  return res
+  return res.data
 }
