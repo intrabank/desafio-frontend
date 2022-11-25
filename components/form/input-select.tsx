@@ -1,10 +1,12 @@
 import { styled } from "../../stitches.config"
 
+export interface Options {
+  label: string,
+  value: string
+}
+
 interface InputProps {
-  options: {
-    label: string,
-    value: string,
-  }[],
+  options: Options[],
   value?: string,
   id: string,
   name: string,

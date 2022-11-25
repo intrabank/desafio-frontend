@@ -4,233 +4,10 @@ import { useState } from "react";
 import { registerUser } from "../../utils/registration/registration"
 
 import type { FormData } from "../../utils/registration/registration";
+import type { Options } from "../../components";
 
-import { styled } from "../../stitches.config";
-import { InputButton } from "../../components";
-import { InputConsentment } from "../../components";
-import { InputField } from "../../components"
-import { InputSelect } from "../../components";
-import { InputTextarea } from "../../components";
-
-const Text = styled('p', {
-  variants: {
-    size: {
-      large: {
-        fontSize: '$5'
-      },
-      medium: {
-        fontSize: '$4'
-      },
-      regular: {
-        fontSize: '$3'
-      },
-      small: {
-        fontSize: '$2'
-      },
-      tiny: {
-        fontSize: '$1'
-      }
-    },
-    color: {
-      white: {
-        color: 'white',
-      },
-      light: {
-        color: '$gray100'
-      },
-      gray: {
-        color: '$gray200'
-      }
-    },
-    weight: {
-      heavy: {
-        fontWeight: '$heavy'
-      },
-      regular: {
-        fontWeight: '$regular'
-      },
-      light: {
-        fontWeight: '$light'
-      },
-      thin: {
-        fontWeight: '$thin'
-      },
-    },
-    align: {
-      left: {
-        textAlign: 'left'
-      },
-      center: {
-        textAlign: 'center'
-      },
-      right: {
-        textAlign: 'right'
-      },
-    }
-  }
-})
-
-const BackgroundBox = styled('div', {
-  variants: {
-    media: {
-      xl: {
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignContent: 'start',
-        flexDirection: 'row-reverse',
-        padding: '88px 5%',
-      },
-      md: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        gap: 48,
-        padding: '77px 5% 77px 5%',
-      },
-      sm: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        gap: 48,
-        padding: '77px 5% 77px 5%',
-      },
-    }
-  }
-})
-
-const Box = styled('div', {
-  variants: {
-    usage: {
-      box: {
-        flex: 1,
-        alignSelf: 'center',
-        border: '$gray400 solid 1px',
-        borderRadius: 8,
-        padding: '54px 5%',
-        width: '100%',
-        maxWidth: 600,
-      },
-    }
-  }
-})
-
-const BackgroundImage = styled('div', {
-  backgroundImage: 'url("/globe.svg")',
-  backgroundRepeat: 'no-repeat',
-  position: 'fixed',
-  right: 0,
-  top: 0,
-  width: '50vw',
-  height: '100vh',
-  zIndex: '-1',
-})
-
-const Stack = styled('div', {
-  // border: '$redSalsa solid 1px',
-  display: 'flex',
-  flexDirection: 'column',
-  height: 'fit-content',
-  width: '100%',
-  variants: {
-    size: {
-      large: {
-        gap: '32px',
-      },
-      medium: {
-        maxWidth: '320px',
-        gap: '16px',
-      },
-      small: {
-        gap: '8px'
-      }
-    },
-    media: {
-      sm: {
-        flex: 1,
-        alignSelf: 'center',
-        [`& > ${Text}`]: {
-          textAlign: 'center',
-        },
-        [`& > svg`]: {
-          alignSelf: 'center',
-        },
-      },
-      md: {
-        flex: 1,
-        alignSelf: 'center',
-        [`& > ${Text}`]: {
-          textAlign: 'center',
-        },
-        [`& > svg`]: {
-          alignSelf: 'center',
-        },
-      },
-      xl: {
-        flex: 1,
-        position: 'sticky',
-        top: '30vh',
-        alignSelf: 'auto',
-        [`& > ${Text}`]: {
-          textAlign: 'left',
-        },
-        [`& > svg`]: {
-          alignSelf: 'start',
-        },
-      },
-    }
-  }
-})
-
-const Form = styled('form', {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  gap: '16px',
-  // border: 'solid 1px $redSalsa'
-})
-
-interface Options {
-  label: string,
-  value: string
-}
-
-export async function getStaticProps() {
-  
-  try {
-    const res = await fetch('https://restcountries.com/v3.1/all')
-    const data = await res.json()
-
-
-    let options: Options[] = []
-    data.map((country: any) => {
-      options.push(
-        {
-          "label": `${country.flag} ${country.translations.por.common}`,
-          "value": country.translations.por.common
-        }
-      )
-    })
-
-    options.sort(function (a: Options, b: Options) {
-      if (a.value < b.value) {
-        return -1;
-      }
-      if (a.value > b.value) {
-        return 1;
-      }
-      return 0;
-    });
-  
-    return {
-      props: {
-        data: options
-      },
-    }
-    
-  } catch (error) {
-    console.log(error)
-  }
-}
+import { InputTextarea, InputSelect, InputField, InputConsentment, InputButton } from "../../components";
+import { Form, Stack, Box, BackgroundBox, BackgroundImage, Text } from "../../styles"
 
 const Register: NextPage = (props: any) => {
 
@@ -250,7 +27,7 @@ const Register: NextPage = (props: any) => {
 
     const res = await registerUser(inputs)
     console.log(res)
-    
+
     alert(
       ` Cadastro realizado com sucesso.
         Nome: ${inputs.firstName}
@@ -271,13 +48,13 @@ const Register: NextPage = (props: any) => {
         <meta name="description" content="Desafio Frontend Intrabank" />
       </Head>
       <BackgroundImage />
-      
+
       <BackgroundBox media={{
         "@initial": "sm",
         "@md": "md",
         "@xl": "xl",
       }}>
-      
+
         <Stack size={"medium"} media={{
           "@initial": "sm",
           "@md": "md",
@@ -422,6 +199,43 @@ const Register: NextPage = (props: any) => {
       </BackgroundBox>
     </>
   )
+}
+
+export async function getStaticProps() {
+
+  try {
+    const res = await fetch('https://restcountries.com/v3.1/all')
+    const data = await res.json()
+
+    let options: Options[] = []
+    data.map((country: any) => {
+      options.push(
+        {
+          "label": `${country.flag} ${country.translations.por.common}`,
+          "value": country.translations.por.common
+        }
+      )
+    })
+
+    options.sort(function (a: Options, b: Options) {
+      if (a.value < b.value) {
+        return -1;
+      }
+      if (a.value > b.value) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return {
+      props: {
+        data: options
+      },
+    }
+
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export default Register
