@@ -31,7 +31,11 @@ const Register: NextPage = (props: any) => {
     const res = await registerUser(inputs)
     const url = {
       pathname: '/cadastro/sucesso',
-      query: res
+      query: {
+        firstName: res.firstName,
+        lastName: res.lastName,
+        birthday: res.birthday
+      }
     }
     router.push(url)
   }
@@ -135,7 +139,7 @@ const Register: NextPage = (props: any) => {
 
               <InputField
                 type="date"
-                value={inputs.birthday || ''}
+                value={inputs.birthday}
                 placeholder="Data de nascimento"
                 id="birthday"
                 name="birthday"

@@ -49,7 +49,7 @@ const Input = styled('input', {
     paddingTop: '10px',
     paddingLeft: '18px',
     fontSize: '$1'
-  }
+  },
 })
 
 const Label = styled('label', {
