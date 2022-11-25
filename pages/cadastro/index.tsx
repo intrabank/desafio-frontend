@@ -34,7 +34,7 @@ const Register: NextPage = (props: any) => {
       query: {
         firstName: res.firstName,
         lastName: res.lastName,
-        birthday: res.birthday
+        dateOfBirthday: res.dateOfBirthday
       }
     }
     router.push(url)
@@ -141,8 +141,8 @@ const Register: NextPage = (props: any) => {
                 type="date"
                 value={inputs.birthday}
                 placeholder="Data de nascimento"
-                id="birthday"
-                name="birthday"
+                id="dateOfBirthday"
+                name="dateOfBirthday"
                 label="Data de nascimento"
                 onChange={handleChange}
                 required={true}

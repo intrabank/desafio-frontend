@@ -22,7 +22,7 @@ const Success: NextPage = (props: any) => {
 
   const firstName: string | undefined = router.query.firstName?.toString()
   const lastName: string | undefined = router.query.lastName?.toString()
-  const birthday: string | undefined = router.query.birthday?.toString()
+  const birthday: string | undefined = router.query.dateOfBirthday?.toString()
   const formattedBirthday = formatDate(birthday)
 
   return (
