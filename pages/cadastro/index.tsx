@@ -196,15 +196,51 @@ interface FormData {
   receiveNotifications: boolean,
 }
 
-const options = [{
-  label: "Brasil",
-  value: "BR",
-}, {
-  label: "Japão",
-  value: "JP",
-}]
+interface Options {
+  label: string,
+  value: string
+}
 
-const Register: NextPage = () => {
+export async function getStaticProps() {
+  
+  try {
+    const res = await fetch('https://restcountries.com/v3.1/all')
+    const data = await res.json()
+
+
+    let options: Options[] = []
+    data.map((country: any) => {
+      options.push(
+        {
+          "label": `${country.flag} ${country.translations.por.common}`,
+          "value": country.translations.por.common
+        }
+      )
+    })
+
+    options.sort(function (a: Options, b: Options) {
+      if (a.value < b.value) {
+        return -1;
+      }
+      if (a.value > b.value) {
+        return 1;
+      }
+      return 0;
+    });
+  
+    return {
+      props: {
+        data: options
+      },
+    }
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const Register: NextPage = (props: any) => {
+
   const [inputs, setInputs] = useState<FormData>({} as FormData)
 
   const handleChange = (event: React.FormEvent) => {
@@ -355,7 +391,7 @@ const Register: NextPage = () => {
                 value={inputs.country || ''}
                 name="country"
                 label="Selecione seu país"
-                options={options}
+                options={props.data}
                 required={true}
                 onChange={handleChange}
               />
