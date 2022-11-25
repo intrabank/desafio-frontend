@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { registerUser } from "../../utils/registration/registration"
 
@@ -9,8 +10,10 @@ import type { Options } from "../../components";
 import { InputTextarea, InputSelect, InputField, InputConsentment, InputButton } from "../../components";
 import { Form, Stack, Box, BackgroundBox, BackgroundImage, Text } from "../../styles"
 
-const Register: NextPage = (props: any) => {
 
+const Register: NextPage = (props: any) => {
+  
+  const router = useRouter()
   const [inputs, setInputs] = useState<FormData>({} as FormData)
 
   const handleChange = (event: React.FormEvent) => {
@@ -26,19 +29,11 @@ const Register: NextPage = (props: any) => {
     event.preventDefault()
 
     const res = await registerUser(inputs)
-    console.log(res)
-
-    alert(
-      ` Cadastro realizado com sucesso.
-        Nome: ${inputs.firstName}
-        Sobrenome: ${inputs.lastName}
-        E-mail: ${inputs.email}
-        Data de nascimento: ${inputs.birthday}
-        Senha: ${inputs.password}
-        País: ${inputs.country}
-        Bio: ${inputs.bio}
-        Recebe notificações? ${inputs.receiveNotifications}
-      `)
+    const url = {
+      pathname: '/cadastro/sucesso',
+      query: res
+    }
+    router.push(url)
   }
 
   return (

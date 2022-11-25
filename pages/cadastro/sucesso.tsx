@@ -1,5 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { formatDate } from "../../utils/date";
 import { styled } from "../../stitches.config";
 import { BackgroundBox, BackgroundGlobeFull, Box, Stack, Text } from "../../styles";
 
@@ -15,6 +17,14 @@ const ProfilePlaceholder = styled('div', {
 })
 
 const Success: NextPage = (props: any) => {
+  
+  const router = useRouter()
+
+  const firstName: string | undefined = router.query.firstName?.toString()
+  const lastName: string | undefined = router.query.lastName?.toString()
+  const birthday: string | undefined = router.query.birthday?.toString()
+  const formattedBirthday = formatDate(birthday)
+
   return (
     <>
       <Head>
@@ -30,13 +40,13 @@ const Success: NextPage = (props: any) => {
         <Box usage={"box"}>
         <Stack size={"large"} media={"sm"}>
           <ProfilePlaceholder>
-            <Text size={"medium"} color={"black"}>RT</Text>
+            <Text size={"medium"} color={"black"}>{`${firstName?.charAt(0) || ""}${lastName?.charAt(0) || ""}`}</Text>
           </ProfilePlaceholder>
           <Text
             size={"medium"}
             weight={"heavy"}
             align={"left"}
-          >Bem vindo Rômulo Takaoka</Text>
+          >Bem vindo {`${firstName || ""} ${lastName || ""}`}</Text>
           <svg
             width="43"
             height="11"
@@ -54,7 +64,7 @@ const Success: NextPage = (props: any) => {
             size={"small"}
             weight={"light"}
             align={"left"}
-          >Você nasceu no dia 26 de setembro de 1988.</Text>
+          >Você nasceu no dia {`${formattedBirthday}`}.</Text>
         </Stack>
         </Box>
       </BackgroundBox>
