@@ -1,7 +1,11 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import { styled } from "../../stitches.config";
 import { useState } from "react";
+import { registerUser } from "../../utils/registration/registration"
+
+import type { FormData } from "../../utils/registration/registration";
+
+import { styled } from "../../stitches.config";
 import { InputButton } from "../../components";
 import { InputConsentment } from "../../components";
 import { InputField } from "../../components"
@@ -185,17 +189,6 @@ const Form = styled('form', {
   // border: 'solid 1px $redSalsa'
 })
 
-interface FormData {
-  firstName: string,
-  lastName: string,
-  email: string,
-  birthday: string,
-  password: string,
-  country: string,
-  bio: string,
-  receiveNotifications: boolean,
-}
-
 interface Options {
   label: string,
   value: string
@@ -252,8 +245,12 @@ const Register: NextPage = (props: any) => {
     setInputs(values => ({ ...values, [name]: type === 'checkbox' ? checked : value }))
   }
 
-  const handleSubmit = (event: React.SyntheticEvent): void => {
+  const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault()
+
+    const res = await registerUser(inputs)
+    console.log(res)
+    
     alert(
       ` Cadastro realizado com sucesso.
         Nome: ${inputs.firstName}
