@@ -69,19 +69,29 @@ const InputBox = styled('div', {
 export const InputConsentment = ({ type, id, name, label, required, checked, onChange }: InputProps) => {
   return (
     <InputBox>
-        <Label htmlFor={name}>
-      <Input
-        type={type}
-        checked={checked}
-        id={id}
-        name={name}
-        required={required}
-        onChange={onChange} />
-      <CheckMark>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 4.5625L6.125 11.4375L3 8.3125" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </CheckMark>
+      <Label htmlFor={name}>
+        <Input
+          type={type}
+          checked={checked}
+          id={id}
+          name={name}
+          required={required}
+          onChange={onChange} />
+        <CheckMark>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13 4.5625L6.125 11.4375L3 8.3125"
+              stroke="black"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round" />
+          </svg>
+        </CheckMark>
         {label}</Label>
     </InputBox>
 

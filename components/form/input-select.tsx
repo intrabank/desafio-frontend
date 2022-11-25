@@ -78,7 +78,7 @@ export const InputSelect = ({ options, value, id, name, label, required, onChang
 
         {options.map((opt) => {
           return (
-            <Option key={opt.value} value={opt.value}>{opt.label}</Option>
+            <Option key={opt.label} value={opt.value}>{opt.label}</Option>
           )
         })}
       </Select>
