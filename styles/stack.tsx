@@ -1,4 +1,5 @@
 import { styled } from "../stitches.config"
+import { Text } from "./text"
 
 export const Stack = styled('div', {
   display: 'flex',
@@ -8,6 +9,7 @@ export const Stack = styled('div', {
   variants: {
     size: {
       large: {
+        maxWidth: '600px',
         gap: '32px',
       },
       medium: {
@@ -28,6 +30,9 @@ export const Stack = styled('div', {
         [`& > svg`]: {
           alignSelf: 'center',
         },
+        [`& > div`]: {
+          alignSelf: 'center',
+        },
       },
       md: {
         flex: 1,
@@ -36,6 +41,9 @@ export const Stack = styled('div', {
           textAlign: 'center',
         },
         [`& > svg`]: {
+          alignSelf: 'center',
+        },
+        [`& > div`]: {
           alignSelf: 'center',
         },
       },
@@ -48,6 +56,9 @@ export const Stack = styled('div', {
           textAlign: 'left',
         },
         [`& > svg`]: {
+          alignSelf: 'start',
+        },
+        [`& > div`]: {
           alignSelf: 'start',
         },
       },

@@ -28,7 +28,10 @@ export const Text = styled('p', {
       },
       gray: {
         color: '$gray200'
-      }
+      },
+      black: {
+        color: '#000'
+      },
     },
     weight: {
       heavy: {
