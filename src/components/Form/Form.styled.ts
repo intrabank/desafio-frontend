@@ -213,4 +213,10 @@ export const SubmitButton = styled('button', {
     border: 'none',
     fontFamily: '$default',
     fontWeight: 500,
+
+    '&.activated-button': {
+        background: '$primaryColor',
+        color: '#000',
+    },
 })
+

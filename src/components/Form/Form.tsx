@@ -66,22 +66,31 @@ export function Form() {
     const filter =
       /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
+    /* First name validation */
     if (!firstName) {
       erros.firstName = "Nome inválido";
       document.getElementById('first-name')?.classList.add('wrong-field')
     } 
+
+    /* Last name validation */
     if (!lastName) {
       erros.lastName = "Sobrenome inválido";
       document.getElementById('last-name')?.classList.add('wrong-field')
     }
+
+    /* E-mail validation */
     if (!filter.test(email)) {
       erros.email = "E-mail inválido";
       document.getElementById('e-mail')?.classList.add('wrong-field')
     }
+    
+    /* Password validation */
     if (!password) {
       erros.password = "Senha inválida";
       document.getElementById('password')?.classList.add('wrong-field')
     }
+
+    /* Country selecion validation */
     if (!selectedOption) {
       erros.selectedOption = "Você precisa selecionar um país";
       document.getElementById('country')?.classList.add('wrong-field')
@@ -89,6 +98,26 @@ export function Form() {
   
     return erros;
   };
+
+  /* ===== CHANGE SUBMIT BUTTON COLOR ===== */
+  const changeSubmitButtonColor = () => {
+    if (typeof window !== "undefined") {
+      const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+
+      const firstNameInput = document.getElementById('first-name') as HTMLInputElement;
+      const lastNameInput = document.getElementById('last-name') as HTMLInputElement;
+      const emailInput = document.getElementById('e-mail') as HTMLInputElement;
+      const passwordInput = document.getElementById('password') as HTMLInputElement;
+
+      if (firstNameInput.value.length != 0 && lastNameInput.value.length !=  0 && emailInput.value.length != 0 && passwordInput.value.length != 0) {
+        console.log('teste')
+        submitButton.classList.add('activated-button');
+      }
+    }
+  }
+
+  changeSubmitButtonColor();
+
 
   /* ===== DROPDOWN ===== */
   /* Opening Menu */
@@ -245,7 +274,7 @@ export function Form() {
           </div>
 
 
-          <SubmitButton onClick={handleSubmit}>Cadastrar</SubmitButton>
+          <SubmitButton id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
         </FormContent>
       </FormContainer>
     </>
