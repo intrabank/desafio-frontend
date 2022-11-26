@@ -18,6 +18,7 @@ import {
   SubmitButton,
 } from "./Form.styled";
 import Router from "next/router";
+
 type error = {
   firstName?: string;
   lastName?: string;
@@ -34,14 +35,15 @@ export function Form() {
   const [birthdate, setBirthdate] = useState("");
   const [password, setPassword] = useState("");
   const [biography, setBiography] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
   const [error, setError] = useState({} as error);
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     const result = await CheckError();
     setError(result);
+    
     if(firstName && lastName && email && password && selectedOption) {
+      console.log('teste')
       await fetch('https://637f50932f8f56e28e87af4a.mockapi.io/challenge', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -50,6 +52,7 @@ export function Form() {
           lastName,
           email,
           password,
+          dateOfBirthday: birthdate,
           bio: biography,
           country: selectedOption,
         })
@@ -110,9 +113,7 @@ export function Form() {
       const passwordInput = document.getElementById('password') as HTMLInputElement;
 
       if (firstNameInput.value.length >= 2 && lastNameInput.value.length >=  2 && emailInput.value.length >= 6 && passwordInput.value.length >= 6) {
-        console.log('teste')
         submitButton.classList.add('activated-button');
-        submitButton.disabled = false;
       }
     }
   }
@@ -123,6 +124,7 @@ export function Form() {
   /* ===== DROPDOWN ===== */
   /* Opening Menu */
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const toggling = () => setIsOpen(!isOpen);
 
@@ -288,7 +290,7 @@ export function Form() {
           </div>
 
 
-          <SubmitButton disabled id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
+          <SubmitButton id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
         </FormContent>
       </FormContainer>
     </>
