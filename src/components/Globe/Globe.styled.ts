@@ -3,10 +3,12 @@ import { styled } from '../../styles'
 export const GlobeContainer = styled('div', {
     flex: 1,
     height: '100vh',
+    width: '100vw',
     display: 'flex',
     alignItems: 'center',
     zIndex: '-1',
     userSelect: 'none',
+    position: 'fixed',
 
     'img': {
         mixBlendMode: 'normal',
@@ -15,10 +17,6 @@ export const GlobeContainer = styled('div', {
         right: '0px',
         zIndex: '-1',
     },
-
-
-
-    
 })
 
 export const TextContainer = styled('div', {
