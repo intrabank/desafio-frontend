@@ -117,10 +117,9 @@ export function Form() {
       const emailInput = document.getElementById('e-mail') as HTMLInputElement;
       const passwordInput = document.getElementById('password') as HTMLInputElement;
 
-      if (firstNameInput.value.length >= 2 && lastNameInput.value.length >=  2 && emailInput.value.length >= 6 && passwordInput.value.length >= 6) {
+      if (firstNameInput.value.length >= 2 && lastNameInput.value.length >=  2 && emailInput. value.length >= 6 && passwordInput.value.length >= 6) {
         console.log(selectedOption)
-        submitButton.classList.add('activated-button');
-        
+        submitButton.classList.add('activated-button');        
       }
     }
   } 
@@ -187,7 +186,7 @@ export function Form() {
           <h1>Cadastre-se</h1>
           <p>Para começar, insira os dados abaixo:</p>
         </FormHeader>
-        <FormContent>
+        <FormContent onSubmit={handleSubmit}>
           {/* First Name */}
           <div className="input-wrapper">
             <CFormInput
@@ -206,6 +205,7 @@ export function Form() {
           {/* Last Name */}
           <div className="input-wrapper">
             <CFormInput
+              required
               type="text"
               id="last-name"
               floatingLabel="Sobrenome"
@@ -219,6 +219,7 @@ export function Form() {
           {/* E-mail */}
           <div className="input-wrapper">
             <CFormInput
+              required
               type="email"
               id="e-mail"
               floatingLabel="E-mail"
@@ -232,6 +233,7 @@ export function Form() {
           {/* E-mail */}
           <div className="input-wrapper">
             <CFormInput
+              required
               type="date"
               id="birthdate"
               floatingLabel="Data de nascimento"
@@ -248,6 +250,7 @@ export function Form() {
 
           <div className="input-wrapper">
             <CFormInput
+              required
               type={showPassword ? "text" : "password"}
               id="password"
               floatingLabel="Senha"
@@ -260,8 +263,6 @@ export function Form() {
             </span>
             <p className="error-message">{error.password ? error.password : null}</p>
           </div>
-
-
 
           {/* Country Dropdown */}
           <div className="input-wrapper">
@@ -307,7 +308,7 @@ export function Form() {
           </div>
 
           {/* Submit Button */}
-          <SubmitButton id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
+          <SubmitButton id="submit-button">Cadastrar</SubmitButton>
           
           <div className="checkbox-wrapper">
             <input 

@@ -14,6 +14,7 @@ export const FormContainer = styled('div', {
     '@bp1': {
         width: '100%',
         height: '100%',
+        background: 'none',
         border: 'none',
         borderRadius: 'none'
     }

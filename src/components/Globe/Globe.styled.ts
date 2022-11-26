@@ -44,11 +44,6 @@ export const TextContainer = styled('div', {
         lineHeight: '130%',
     },
 
-    // Style for 768px width
-    '@bp1': {
-        display: 'none',
-    },
-
     // Style for 1280px width
     '@bp2': {
         display: 'none',
