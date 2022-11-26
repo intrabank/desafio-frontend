@@ -25,6 +25,7 @@ export const globalStyles = globalCss({
 export const Container = styled('div', {
   padding: '50px 100px',
   minHeight: '100vh',
+  height: '100vh',
   display: 'flex',
   alignItems: 'center',
 })

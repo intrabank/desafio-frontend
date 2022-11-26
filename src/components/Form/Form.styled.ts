@@ -1,4 +1,3 @@
-import { relative } from 'path'
 import { styled } from '../../styles'
 
 /* Form General Styles */

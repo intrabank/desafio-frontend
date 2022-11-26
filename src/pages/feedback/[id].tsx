@@ -1,12 +1,17 @@
 import { useRouter } from "next/router";
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { Container } from "../../styles/global";
+import { FeedbackContainer } from "../../styles/pages/feedback";
 
 export default function Page({ firstName, lastName, email, password, country, dateOfBirthday, bio, receiveNotifications }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
      <div>
-      { firstName }
-      { lastName }
+      <Container>
+        <FeedbackContainer>
+        {firstName}
+        </FeedbackContainer>
+      </Container>
      </div>
     </>
     );
