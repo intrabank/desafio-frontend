@@ -13,11 +13,13 @@ export const { styled, globalCss, getCssText } = createStitches({
             cardBackground: 'rgba(29, 29, 29, 0.5);',
             primaryColor: '#00F2B1',
         },
+
         
         fonts: {
             default: 'Poppins',
         }
     },
+
 
     media: {
         bp1: '(max-width: 768px)',

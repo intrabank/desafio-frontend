@@ -35,6 +35,7 @@ export function Form() {
   const [birthdate, setBirthdate] = useState("");
   const [password, setPassword] = useState("");
   const [biography, setBiography] = useState("");
+  const [receiveNotification, setReceiveNotification] = useState(false);
   const [error, setError] = useState({} as error);
 
   const handleSubmit = async (event: any) => {
@@ -55,10 +56,11 @@ export function Form() {
           dateOfBirthday: birthdate,
           bio: biography,
           country: selectedOption,
+          receiveNotification,
         })
       })
-      .then( (res) => res.json())
-      .then( (data) => {
+      .then((res) => res.json())
+      .then((data) => {
         Router.push(`/feedback/${data.id}`)
       })
     }
@@ -218,7 +220,7 @@ export function Form() {
               type="date"
               id="birthdate"
               floatingLabel="Data de nascimento"
-              placeholder="31/12/2022"
+              min="1997-01-01" max="2030-12-31"
               value={birthdate}
               onChange={({ target }) => setBirthdate(target?.value)}
             />
@@ -289,8 +291,17 @@ export function Form() {
             <p className="error-message">{error.biography ? error.biography : null}</p>
           </div>
 
-
+          {/* Submit Button */}
           <SubmitButton id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
+          
+          <div className="checkbox-wrapper">
+            <input 
+              id="receiveNotification" 
+              type="checkbox"
+            />
+            <label htmlFor="receiveNotification">Desejo receber notificações</label>
+          </div>
+
         </FormContent>
       </FormContainer>
     </>

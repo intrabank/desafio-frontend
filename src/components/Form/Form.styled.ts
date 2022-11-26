@@ -103,8 +103,43 @@ export const FormContent = styled('form', {
 
     '.wrong-field': {
         border: '1px solid #FA4D56',
-    }
-    
+    },
+
+    '.checkbox-wrapper': {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: '45px',
+    },
+
+    '.checkbox-wrapper input': {
+        display: 'none'
+    },
+
+    '.checkbox-wrapper label': {
+        fontWeight: 300,
+    },
+
+    '.checkbox-wrapper input + label:before': {
+        content: '',
+        width: '20px',
+        height: '20px',
+        borderRadius: '4px',
+        background: 'transparent',
+        border: '2px solid #B8B8B8',
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        marginRight: '11px',
+        marginBottom: '4px',
+    },
+
+    '.checkbox-wrapper input:checked + label:before': {
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1.5625L4.125 8.4375L1 5.3125' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")`,
+        backgroundColor: '$primaryColor',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        border: '2px solid $primaryColor',
+    },
 })
 
 

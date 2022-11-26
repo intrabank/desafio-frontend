@@ -8,13 +8,13 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
     boxSizing: 'border-box',
-    '-webkit-font-smoothing': 'antialiased', 
+    '-webkit-font-smoothing': 'antialiased',
   },
 
   body: {
     background: '$background !important',
     color: '$text !important',
-    fontFamily: '$default',
+    fontFamily: '$default !important',
   },
 
   'h1, h2, h3, h4 ,h5 ,h6': {
