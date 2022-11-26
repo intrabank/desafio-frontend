@@ -31,7 +31,7 @@ export function Form() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [birthdate, setbirthdate] = useState("");
+  const [birthdate, setBirthdate] = useState("");
   const [password, setPassword] = useState("");
   const [biography, setBiography] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
@@ -41,7 +41,7 @@ export function Form() {
     event.preventDefault();
     const result = await CheckError();
     setError(result);
-    if(firstName && lastName && email && password && biography && selectedOption) {
+    if(firstName && lastName && email && password && selectedOption) {
       await fetch('https://637f50932f8f56e28e87af4a.mockapi.io/challenge', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -86,7 +86,7 @@ export function Form() {
     
     /* Password validation */
     if (!password) {
-      erros.password = "Senha inválida";
+      erros.password = "Sua senha precisa ter mais de 6 caracteres";
       document.getElementById('password')?.classList.add('wrong-field')
     }
 
@@ -109,9 +109,10 @@ export function Form() {
       const emailInput = document.getElementById('e-mail') as HTMLInputElement;
       const passwordInput = document.getElementById('password') as HTMLInputElement;
 
-      if (firstNameInput.value.length != 0 && lastNameInput.value.length !=  0 && emailInput.value.length != 0 && passwordInput.value.length != 0) {
+      if (firstNameInput.value.length >= 2 && lastNameInput.value.length >=  2 && emailInput.value.length >= 6 && passwordInput.value.length >= 6) {
         console.log('teste')
         submitButton.classList.add('activated-button');
+        submitButton.disabled = false;
       }
     }
   }
@@ -209,6 +210,19 @@ export function Form() {
             <p className="error-message">{error.email ? error.email : null}</p>
           </div>
 
+          {/* E-mail */}
+          <div className="input-wrapper">
+            <CFormInput
+              type="date"
+              id="birthdate"
+              floatingLabel="Data de nascimento"
+              placeholder="31/12/2022"
+              value={birthdate}
+              onChange={({ target }) => setBirthdate(target?.value)}
+            />
+            <p className="error-message">{error.email ? error.email : null}</p>
+          </div>
+
 
 
           {/* Password */}
@@ -274,7 +288,7 @@ export function Form() {
           </div>
 
 
-          <SubmitButton id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
+          <SubmitButton disabled id="submit-button" onClick={handleSubmit}>Cadastrar</SubmitButton>
         </FormContent>
       </FormContainer>
     </>

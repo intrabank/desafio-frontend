@@ -28,7 +28,11 @@ export const FormHeader = styled('header', {
 })
 
 export const FormContent = styled('form', {
-    width: '100%',
+    'input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator': {
+        display: 'none',
+        '-webkit-appearance': 'none',
+    }, 
+    
 
     'textarea': {
         minHeight: '96px !important',
