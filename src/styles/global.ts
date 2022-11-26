@@ -23,7 +23,7 @@ export const globalStyles = globalCss({
 })
 
 export const Container = styled('div', {
-  padding: '0px 100px',
+  padding: '50px 100px',
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
