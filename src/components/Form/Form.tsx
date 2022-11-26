@@ -118,11 +118,14 @@ export function Form() {
       const passwordInput = document.getElementById('password') as HTMLInputElement;
 
       if (firstNameInput.value.length >= 2 && lastNameInput.value.length >=  2 && emailInput.value.length >= 6 && passwordInput.value.length >= 6) {
+        console.log(selectedOption)
         submitButton.classList.add('activated-button');
-        submitButton.disabled = false;
+        
       }
     }
   } 
+
+  changeSubmitButtonColor()
 
   
 
@@ -138,7 +141,7 @@ export function Form() {
   /* ===== DROPDOWN ===== */
   /* Opening Menu */
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("a");
 
   const toggling = () => setIsOpen(!isOpen);
 

@@ -262,10 +262,12 @@ export const SubmitButton = styled('button', {
     border: 'none',
     fontFamily: '$default',
     fontWeight: 500,
+    pointerEvents: 'none',
 
     '&.activated-button': {
         background: '$primaryColor',
         color: '#000',
+        pointerEvents: 'all'
     },
 })
 
