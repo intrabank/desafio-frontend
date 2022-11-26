@@ -8,10 +8,20 @@ export const FeedbackContainer = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  position: 'relative',
+  overflow: 'hidden',
 
   'img': {
     position: 'absolute',
     zIndex: '-1',
+  },
+
+  // Style for 768px width
+  '@bp1': {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    borderRadius: 'none'
   }
 })
 
@@ -20,7 +30,6 @@ export const FeedbackWrapper = styled('div', {
 })
 
 export const FeedbackBox = styled('div', {
-
   background: '$cardBackground',
   mixBlendModel: 'normal',
   border: '2px solid #2A2A2A',
@@ -29,6 +38,14 @@ export const FeedbackBox = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   padding: '80px',
+
+  // Style for 768px width
+  '@bp1': {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    borderRadius: 'none'
+  }
 })
 
 export const FeedbackContent = styled('div', {
