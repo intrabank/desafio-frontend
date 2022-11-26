@@ -97,7 +97,7 @@ export const FormContent = styled('form', {
     '.eye-icon': {
         zIndex: 9999,
         position: 'absolute',
-        top: '30%',
+        top: '20%',
         right: '15px',
     },
 

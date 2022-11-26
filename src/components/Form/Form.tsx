@@ -239,7 +239,7 @@ export function Form() {
               onChange={({ target }) => setPassword(target?.value)}
             />
             <span onClick={setShowPassword} className="eye-icon" id="show-password">
-              <img src={showPassword ? '/hidePassword.svg' : '/showPassword.svg'} />
+              <img src={showPassword ? '/hidePassword.png' : '/showPassword.png'} />
             </span>
             <p className="error-message">{error.password ? error.password : null}</p>
           </div>
