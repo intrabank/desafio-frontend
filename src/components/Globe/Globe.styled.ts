@@ -9,6 +9,7 @@ export const GlobeContainer = styled('div', {
     zIndex: '-1',
     userSelect: 'none',
     position: 'fixed',
+    right: '0px',
 
     'img': {
         mixBlendMode: 'normal',
