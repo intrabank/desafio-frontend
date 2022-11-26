@@ -2,21 +2,20 @@
 import { useRouter } from "next/router";
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Container, Rectangle } from "../../styles/global";
-import { FeedbackBox, FeedbackContainer, FeedbackContent } from "../../styles/pages/feedback";
+import { FeedbackBox, FeedbackContainer, FeedbackContent } from "../../styles/pages/challenge";
 
 export default function Page({ firstName, lastName, email, password, country, dateOfBirthday, bio, receiveNotifications }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
 
+
   /* ===== GET DATE INFO ===== */
   const date = new Date(dateOfBirthday)
-  console.log(date)
 
   /* Array to transform month numbers into month names */
   let monName = new Array ("", "janeiro", "fevereiro", "março", "abril", "Maio", "junho", "agosto", "outubro", "novembro", "dezembro")
 
   /* Day */
   let day = date.getDate();
-  console.log(day.toLocaleString())
 
   /* Month */
   let month = monName[date.getMonth()]
@@ -25,8 +24,8 @@ export default function Page({ firstName, lastName, email, password, country, da
   let year = date.getFullYear();
 
   return (
-    <>
-     <div>
+  <>
+    <div>
       <Container>
         <FeedbackContainer>
           <FeedbackBox>
@@ -50,8 +49,8 @@ export default function Page({ firstName, lastName, email, password, country, da
           <img src="/fullGlobe.svg" alt="Imagem do globo" />
         </FeedbackContainer>
       </Container>
-     </div>
-    </>
+    </div>
+  </>
     );
 }
 
@@ -61,6 +60,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const res = await fetch(`https://637f50932f8f56e28e87af4a.mockapi.io/challenge/${id}`)
   const data = await res.json()
+  
   return {
     props: {  
       firstName: data.firstName,

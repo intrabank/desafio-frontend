@@ -44,7 +44,6 @@ export function Form() {
     setError(result);
     
     if(firstName && lastName && email && password && selectedOption) {
-      console.log('teste')
       await fetch('https://637f50932f8f56e28e87af4a.mockapi.io/challenge', {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -61,8 +60,10 @@ export function Form() {
       })
       .then((res) => res.json())
       .then((data) => {
-        Router.push(`/feedback/${data.id}`)
+        Router.push(`/challenge/${data.id}`)
       })
+
+      console.log(firstName)
     }
   };
 
@@ -101,7 +102,9 @@ export function Form() {
       document.getElementById('country')?.classList.add('wrong-field')
     }
   
+    console.log(erros)
     return erros;
+
   };
 
   /* ===== CHANGE SUBMIT BUTTON COLOR ===== */
@@ -116,12 +119,12 @@ export function Form() {
 
       if (firstNameInput.value.length >= 2 && lastNameInput.value.length >=  2 && emailInput.value.length >= 6 && passwordInput.value.length >= 6) {
         submitButton.classList.add('activated-button');
+        submitButton.disabled = false;
       }
     }
-  }
+  } 
 
-  changeSubmitButtonColor();
-
+  
 
   /* ===== GET CHECKBOX VALUE ===== */
   const checkboxValue = () => {

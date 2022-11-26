@@ -131,6 +131,7 @@ export const FormContent = styled('form', {
         verticalAlign: 'middle',
         marginRight: '11px',
         marginBottom: '4px',
+        cursor: 'pointer',
     },
 
     '.checkbox-wrapper input:checked + label:before': {
