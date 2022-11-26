@@ -67,24 +67,26 @@ export function Form() {
       /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
     if (!firstName) {
-      erros.firstName = "Esse campo é obrigatorio";
+      erros.firstName = "Nome inválido";
       document.getElementById('first-name')?.classList.add('wrong-field')
     } 
     if (!lastName) {
-      erros.lastName = "Esse campo é obrigatorio";
+      erros.lastName = "Sobrenome inválido";
+      document.getElementById('last-name')?.classList.add('wrong-field')
     }
     if (!filter.test(email)) {
-      erros.email = "Esse campo é obrigatorio";
+      erros.email = "E-mail inválido";
+      document.getElementById('e-mail')?.classList.add('wrong-field')
     }
     if (!password) {
-      erros.password = "Esse campo é obrigatorio";
+      erros.password = "Senha inválida";
+      document.getElementById('password')?.classList.add('wrong-field')
     }
     if (!selectedOption) {
-      erros.selectedOption = "Esse campo é obrigatorio";
+      erros.selectedOption = "Você precisa selecionar um país";
+      document.getElementById('country')?.classList.add('wrong-field')
     }
-    if (!biography) {
-      erros.biography = "Esse campo é obrigatorio";
-    }
+  
     return erros;
   };
 

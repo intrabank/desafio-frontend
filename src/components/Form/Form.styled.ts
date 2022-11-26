@@ -148,7 +148,7 @@ export const SelectorContainer = styled('div', {
 
 export const DropdownContainer = styled('div', {
     width: '100%',
-    
+    marginBottom: '8px',
 })
 
 export const DropdownHeader = styled('div', {
