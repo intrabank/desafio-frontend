@@ -147,7 +147,7 @@ export function Form() {
               value={firstName}
               onChange={({ target }) => setFirstName(target?.value)}
             />
-            <p>{error.firstName ? error.firstName : null}</p>
+            <p className="error-message">{error.firstName ? error.firstName : null}</p>
           </div>
 
 
@@ -162,7 +162,7 @@ export function Form() {
               value={lastName}
               onChange={({ target }) => setLastName(target?.value)}
             />
-            {error.lastName ? error.lastName : null}
+            <p className="error-message">{error.lastName ? error.lastName : null}</p>
           </div>
 
           {/* E-mail */}
@@ -175,7 +175,7 @@ export function Form() {
               value={email}
               onChange={({ target }) => setEmail(target?.value)}
             />
-            {error.email ? error.email : null}
+            <p className="error-message">{error.email ? error.email : null}</p>
           </div>
 
 
@@ -194,7 +194,7 @@ export function Form() {
             <span onClick={setShowPassword} className="eye-icon" id="show-password">
               <img src={showPassword ? '/hidePassword.svg' : '/showPassword.svg'} />
             </span>
-            {error.password ? error.password : null}
+            <p className="error-message">{error.password ? error.password : null}</p>
           </div>
 
 
@@ -225,7 +225,7 @@ export function Form() {
                 </DropdownListContainer>
               )}
             </DropdownContainer>
-            {error.selectedOption ? error.selectedOption : null}
+            <p className="error-message">{error.selectedOption ? error.selectedOption : null}</p>
           </div>
 
 
@@ -239,7 +239,7 @@ export function Form() {
               onChange={({ target }) => setBiography(target?.value)}
             ></CFormTextarea>
 
-            {error.biography ? error.biography : null}
+            <p className="error-message">{error.biography ? error.biography : null}</p>
           </div>
 
 

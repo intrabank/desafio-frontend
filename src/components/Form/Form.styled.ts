@@ -44,7 +44,7 @@ export const FormContent = styled('form', {
         background: '$inputBackground',
         border: '1px solid #414141',
         borderRadius: '8px',
-        marginBottom: '16px',
+        marginBottom: '8px',
         color: '$title !important',
         outline: 'none',
         fontFamily: '$default',
@@ -73,6 +73,12 @@ export const FormContent = styled('form', {
 
     '.input-wrapper': {
         position: 'relative',
+        marginBottom: '16px',
+    },
+
+    '.input-wrapper .error-message': {
+        color: '#FA4D56',
+        fontFamily: '$default',
     },
 
     '.eye-icon': {
