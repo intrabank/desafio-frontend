@@ -1,20 +1,48 @@
+/* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { Container } from "../../styles/global";
-import { FeedbackBox, FeedbackContainer } from "../../styles/pages/feedback";
+import { Container, Rectangle } from "../../styles/global";
+import { FeedbackBox, FeedbackContainer, FeedbackContent } from "../../styles/pages/feedback";
 
 export default function Page({ firstName, lastName, email, password, country, dateOfBirthday, bio, receiveNotifications }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+  let monName = new Array ("", "janeiro", "fevereiro", "março", "abril", "Maio", "junho", "agosto", "outubro", "novembro", "dezembro")
+
+  /* Date Format */
+  const date = new Date(dateOfBirthday)
+  console.log(date)
+
+  let day = date.getDate();
+  console.log(day.toLocaleString())
+
+  let month = monName[date.getMonth()]
+
+  let year = date.getFullYear();
+
   return (
     <>
      <div>
       <Container>
         <FeedbackContainer>
           <FeedbackBox>
-            <FeedbackContainer>
-              <h1 className="full-name">Bem vindo { firstName } { lastName }</h1>
-            </FeedbackContainer>
+            <FeedbackContent>
+              <div className="user-icon">
+                {
+                  <p>{firstName.charAt(0)}{lastName.charAt(0)}</p>
+                }
+              </div>
+              <h1 className="user-name">Bem vindo { firstName } { lastName }</h1>
+
+              <Rectangle/>
+              
+              <div className="user-birth">
+                {
+                  <p>Você nasceu no dia {day} de {month} de {year} </p>
+                }
+              </div>
+            </FeedbackContent>
           </FeedbackBox>
-          <img src="/fullGlobe.svg"/>
+          <img src="/fullGlobe.svg" alt="Imagem do globo" />
         </FeedbackContainer>
       </Container>
      </div>

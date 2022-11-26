@@ -8,7 +8,6 @@ export const FeedbackContainer = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  background: '/',
 
   'img': {
     position: 'absolute',
@@ -21,8 +20,7 @@ export const FeedbackWrapper = styled('div', {
 })
 
 export const FeedbackBox = styled('div', {
-  width: '820px',
-  height: '420px',
+
   background: '$cardBackground',
   mixBlendModel: 'normal',
   border: '2px solid #2A2A2A',
@@ -30,13 +28,44 @@ export const FeedbackBox = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  padding: '80px',
 })
 
 export const FeedbackContent = styled('div', {
-  '&.full-name': {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+
+  '.user-name': {
     fontWeight: 700,
     fontSize: '45px',
-    linHeight: '130%',
+    lineHeight: '130%',
+    textAlign: 'center',
+  },
+
+  '.user-icon': {
+    width: '78px',
+    height: '78px',
+    background: '#47E0FF',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '40px',
+
+    'p': {
+      color: '#000',
+      fontSize: '25px',
+      fontWeight: 500,
+      lineHeight: '130%',
+    }
+  },
+
+  '.user-birth': {
+    fontWeight: 300,
+    fontSize: '18px',
+    lineHeight: '130%',
     textAlign: 'center',
   }
 })
