@@ -6,17 +6,22 @@ import { FeedbackBox, FeedbackContainer, FeedbackContent } from "../../styles/pa
 
 export default function Page({ firstName, lastName, email, password, country, dateOfBirthday, bio, receiveNotifications }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
-  let monName = new Array ("", "janeiro", "fevereiro", "março", "abril", "Maio", "junho", "agosto", "outubro", "novembro", "dezembro")
 
-  /* Date Format */
+  /* ===== GET DATE INFO ===== */
   const date = new Date(dateOfBirthday)
   console.log(date)
 
+  /* Array to transform month numbers into month names */
+  let monName = new Array ("", "janeiro", "fevereiro", "março", "abril", "Maio", "junho", "agosto", "outubro", "novembro", "dezembro")
+
+  /* Day */
   let day = date.getDate();
   console.log(day.toLocaleString())
 
+  /* Month */
   let month = monName[date.getMonth()]
 
+  /* Month */
   let year = date.getFullYear();
 
   return (

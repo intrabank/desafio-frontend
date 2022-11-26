@@ -123,6 +123,15 @@ export function Form() {
   changeSubmitButtonColor();
 
 
+  /* ===== GET CHECKBOX VALUE ===== */
+  const checkboxValue = () => {
+    if (typeof window !== "undefined") {
+      const checkbox = document.getElementById('receive-notification') as HTMLInputElement;
+
+      checkbox.checked ? setReceiveNotification(true) : setReceiveNotification(false);
+    }
+  }
+
   /* ===== DROPDOWN ===== */
   /* Opening Menu */
   const [isOpen, setIsOpen] = useState(false);
@@ -296,10 +305,11 @@ export function Form() {
           
           <div className="checkbox-wrapper">
             <input 
-              id="receiveNotification" 
+              id="receive-notification" 
               type="checkbox"
+              onChange={checkboxValue}
             />
-            <label htmlFor="receiveNotification">Desejo receber notificações</label>
+            <label htmlFor="receive-notification">Desejo receber notificações</label>
           </div>
 
         </FormContent>
