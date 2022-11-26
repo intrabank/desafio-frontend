@@ -6,7 +6,8 @@ export const FormContainer = styled('div', {
     width: '706px',
     background: '$cardBackground',
     borderRadius: '8px',
-    padding: '54px 77px'
+    padding: '54px 77px',
+    border: '2px solid #2A2A2A',
 })
 
 export const FormHeader = styled('header', {
