@@ -17,6 +17,11 @@ export const GlobeContainer = styled('div', {
         right: '0px',
         zIndex: '-1',
     },
+
+    // Style for 768px width
+    '@bp1': {
+
+    }
 })
 
 export const TextContainer = styled('div', {
@@ -37,4 +42,14 @@ export const TextContainer = styled('div', {
         fontSize: '18px',
         lineHeight: '130%',
     },
+
+    // Style for 768px width
+    '@bp1': {
+        display: 'none',
+    },
+
+    // Style for 1280px width
+    '@bp2': {
+        display: 'none',
+    }
 })

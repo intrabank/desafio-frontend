@@ -17,5 +17,10 @@ export const { styled, globalCss, getCssText } = createStitches({
         fonts: {
             default: 'Poppins',
         }
+    },
+
+    media: {
+        bp1: '(max-width: 768px)',
+        bp2: '(max-width: 1280px)',
     }
 });

@@ -3,11 +3,20 @@ import { styled } from '../../styles'
 /* Form General Styles */
 
 export const FormContainer = styled('div', {
+    minWidth: '515px',
     width: '706px',
     background: '$cardBackground',
     borderRadius: '8px',
     padding: '54px 77px',
     border: '2px solid #2A2A2A',
+
+    // Style for 768px width
+    '@bp1': {
+        width: '100%',
+        height: '100%',
+        border: 'none',
+        borderRadius: 'none'
+    }
 })
 
 export const FormHeader = styled('header', {

@@ -28,6 +28,12 @@ export const Container = styled('div', {
   height: '100vh',
   display: 'flex',
   alignItems: 'center',
+
+  '@bp1': {
+    // Style for 768px width
+    width: '100%',
+    padding: '0px 0px',
+  }
 })
 
 export const Rectangle = styled('div', {
