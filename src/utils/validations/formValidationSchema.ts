@@ -4,7 +4,7 @@ const schema = yup
 	.object({
 		firstName: yup.string().required('Nome é obrigatório'),
 		lastName: yup.string().required('Sobrenome é obrigatório'),
-		birthday: yup.string().required('Data de nascimento é obrigatório'),
+		birthday: yup.date().required('Data de nascimento é obrigatório'),
 		country: yup.string().required('País é obrigatório'),
 		email: yup
 			.string()

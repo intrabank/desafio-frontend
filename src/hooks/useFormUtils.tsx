@@ -3,21 +3,9 @@ import Input from '@/components/molecules/input';
 import Select from '@/components/molecules/select';
 import TextArea from '@/components/molecules/textarea';
 import { FieldError, Merge } from 'react-hook-form';
-import { FieldsNameType, FieldType } from '@types';
+import { FieldsNameType, FieldType, FormFields } from '@types';
 
-type ReactHookFormProps = ControllerRenderProps<
-	{
-		firstName: string;
-		lastName: string;
-		email: string;
-		birthday: string;
-		password: string;
-		country: string;
-		bio: string;
-		notification: boolean;
-	},
-	FieldsNameType
->;
+type ReactHookFormProps = ControllerRenderProps<FormFields, FieldsNameType>;
 
 const returnInputState = (
 	errorsFromInput:

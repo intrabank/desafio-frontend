@@ -1,5 +1,4 @@
 import { styled } from '@stitches/react';
-import InputMask from 'react-input-mask';
 
 const state = {
 	error: {
@@ -32,9 +31,5 @@ const inputStyles = {
 };
 
 export const InputContainer = styled('input', {
-	...inputStyles,
-});
-
-export const InputMaskContainer = styled(InputMask, {
 	...inputStyles,
 });

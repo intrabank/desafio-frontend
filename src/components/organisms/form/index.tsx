@@ -10,8 +10,14 @@ import {
 	FormHeaderContainer,
 } from './style';
 import { returnFieldByType } from '@/hooks/useFormUtils';
+import { auth } from '@/services/auth';
+import { FormFields } from '@types';
+import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
+	const { push } = useRouter();
 	const {
 		handleSubmit,
 		control,
@@ -30,7 +36,17 @@ const Form = () => {
 		resolver: yupResolver(formValidationSchema),
 	});
 
-	const onSubmit = (data: unknown) => console.log(data);
+	const onSubmit = async (data: FormFields) => {
+		const response = await auth(data);
+		const userCreated = response.id;
+
+		if (!userCreated) {
+			toast(`Erro ao criar usuário: ${response}`);
+			return;
+		}
+
+		push('/users/[id]', `/users/${response.id}`);
+	};
 
 	return (
 		<Card>

@@ -24,3 +24,14 @@ export type FieldType = {
 };
 
 export type FieldState = 'idle' | 'error' | 'active';
+
+export interface FormFields {
+	firstName: string;
+	lastName: string;
+	email: string;
+	birthday: string;
+	password: string;
+	country: string;
+	bio: string;
+	notification: boolean;
+}
