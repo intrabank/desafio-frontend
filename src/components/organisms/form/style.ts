@@ -1,5 +1,10 @@
 import { styled } from '@stitches/react';
 
+export const Container = styled('div', {
+	width: '80%',
+	height: '60%',
+});
+
 export const FormHeaderContainer = styled('div', {
 	display: 'flex',
 	flexDirection: 'column',
@@ -15,6 +20,8 @@ export const FormFieldsContainer = styled('div', {
 	gap: '$200',
 	width: '100%',
 	height: '100%',
+	flexWrap: 'wrap',
+
 	marginBottom: '$300',
 });
 
@@ -24,4 +31,5 @@ export const FormContainer = styled('form', {
 	justifyContent: 'center',
 	alignItems: 'center',
 	width: '100%',
+	height: '100%',
 });

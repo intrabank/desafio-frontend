@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import formValidationSchema from '@/utils/validations/formValidationSchema';
 import { fields } from './fields';
 import {
+	Container,
 	FormContainer,
 	FormFieldsContainer,
 	FormHeaderContainer,
@@ -49,57 +50,62 @@ const Form = () => {
 	};
 
 	return (
-		<Card>
-			<FormHeaderContainer>
-				<Text as='h2' color='white' size='lg' weight='bold'>
-					Cadastre-se
-				</Text>
-				<Text as='p' color='white' size='sm' weight='light'>
-					Para começar, insira os dados abaixo:
-				</Text>
-			</FormHeaderContainer>
-			<FormContainer>
-				<FormFieldsContainer>
-					{fields.map((fieldItem, key) => {
-						return (
-							<Controller
-								key={key}
-								control={control}
-								name={fieldItem.name}
-								render={({
-									field: hookFormProps,
-									fieldState: { isDirty: fieldTouched },
-								}) => {
-									return returnFieldByType(
-										fieldItem,
-										errors,
-										hookFormProps,
-										fieldTouched
-									);
-								}}
-							/>
-						);
-					})}
-					<Button
-						aria-disabled={!isValid}
-						disabled={!isValid}
-						onClick={handleSubmit(onSubmit)}
-					>
-						Enviar
-					</Button>
-				</FormFieldsContainer>
+		<Container>
+			<Card>
+				<FormHeaderContainer>
+					<Text as='h2' color='white' size='lg' weight='bold'>
+						Cadastre-se
+					</Text>
+					<Text as='p' color='white' size='sm' weight='light'>
+						Para começar, insira os dados abaixo:
+					</Text>
+				</FormHeaderContainer>
+				<FormContainer>
+					<FormFieldsContainer>
+						{fields.map((fieldItem, key) => {
+							return (
+								<Controller
+									key={key}
+									control={control}
+									name={fieldItem.name}
+									render={({
+										field: hookFormProps,
+										fieldState: { isDirty: fieldTouched },
+									}) => {
+										return returnFieldByType(
+											fieldItem,
+											errors,
+											hookFormProps,
+											fieldTouched
+										);
+									}}
+								/>
+							);
+						})}
+						<Button
+							aria-disabled={!isValid}
+							disabled={!isValid}
+							onClick={handleSubmit(onSubmit)}
+						>
+							Enviar
+						</Button>
+					</FormFieldsContainer>
 
-				<Controller
-					control={control}
-					name='notification'
-					render={({ field: hookFormProps }) => {
-						return (
-							<Checkbox text='Desejo receber notificações' {...hookFormProps} />
-						);
-					}}
-				/>
-			</FormContainer>
-		</Card>
+					<Controller
+						control={control}
+						name='notification'
+						render={({ field: hookFormProps }) => {
+							return (
+								<Checkbox
+									text='Desejo receber notificações'
+									{...hookFormProps}
+								/>
+							);
+						}}
+					/>
+				</FormContainer>
+			</Card>
+		</Container>
 	);
 };
 

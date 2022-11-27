@@ -19,8 +19,7 @@ const variants = {
 const inputStyles = {
 	variants,
 	padding: '22px 16px 3px 16px',
-	width: '100%',
-
+	flex: '1',
 	color: '$white',
 	background: '$dark950',
 	borderRadius: '8px',
