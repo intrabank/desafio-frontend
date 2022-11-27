@@ -1,2 +1,2 @@
 export { default as Layout } from './layout';
-export { default as SignUpTemplate } from './signUpTemplate';
+export { default as SignUpTemplate } from '../pageComponents/signUpPage';

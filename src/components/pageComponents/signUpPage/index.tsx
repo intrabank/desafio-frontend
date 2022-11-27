@@ -1,7 +1,7 @@
 import { Form } from '@/components/organisms';
 import { Section } from './style';
 
-const SignUpTemplate = () => {
+const SignUpPage = () => {
 	return (
 		<>
 			<Section>
@@ -12,4 +12,4 @@ const SignUpTemplate = () => {
 	);
 };
 
-export default SignUpTemplate;
+export default SignUpPage;
