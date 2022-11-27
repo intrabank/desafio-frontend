@@ -1,5 +1,13 @@
+import { color, size, typeAs, weight } from '@types';
 import { TextContainer } from './style';
-import { TextProps } from './types';
+
+type TextProps = {
+	children: string;
+	weight?: weight;
+	size?: size;
+	color?: color;
+	as?: typeAs;
+};
 
 const Text = ({
 	children,

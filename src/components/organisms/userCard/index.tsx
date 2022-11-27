@@ -1,15 +1,13 @@
 import { Card, Divider, Text } from '@/components/atoms';
 import { UserIcon } from '@/components/molecules';
+import useUserData from '@/hooks/useUserData';
 import { FormatedUser, User } from '@types';
 
 import React from 'react';
 import { UserCardContent, UserCardText } from './style';
 
-type Props = {
-	user: FormatedUser;
-};
-
-const UserCard = ({ user }: Props) => {
+const UserCard = () => {
+	const { user } = useUserData();
 	return (
 		<Card>
 			<UserCardContent>

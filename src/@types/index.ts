@@ -53,3 +53,17 @@ export interface FormatedUser extends User {
 	initials: string;
 	formatedDate: string;
 }
+
+export type weight = 'thin' | 'light' | 'regular' | 'medium' | 'bold' | 'black';
+export type size = 'sm' | 'md' | 'lg' | 'xl';
+export type color = 'white' | 'gray' | 'darkgray' | 'black' | 'red';
+export type typeAs =
+	| 'h1'
+	| 'h2'
+	| 'h3'
+	| 'h4'
+	| 'h5'
+	| 'h6'
+	| 'p'
+	| 'span'
+	| 'div';

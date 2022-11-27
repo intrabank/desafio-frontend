@@ -1,16 +1,12 @@
 import UserCard from '@/components/organisms/userCard';
-import { FormatedUser, User } from '@types';
 import Image from 'next/image';
 import { Container, ImageContainer, UserCardContainer } from './style';
-type Props = {
-	user: FormatedUser;
-};
 
-const UserPageComponent = ({ user }: Props) => {
+const UserPageComponent = () => {
 	return (
 		<Container>
 			<UserCardContainer>
-				<UserCard user={user} />
+				<UserCard />
 			</UserCardContainer>
 
 			<ImageContainer>

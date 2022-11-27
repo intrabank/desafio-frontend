@@ -1,4 +1,5 @@
 import UserPageComponent from '@/components/pageComponents/userPage';
+import useUserData from '@/hooks/useUserData';
 import { getUser } from '@/services/getUser';
 import formatUser from '@/utils/formatters/formatUser';
 import { FormatedUser } from '@types';
@@ -9,9 +10,12 @@ type Props = {
 };
 
 const UserPage = ({ user }: Props) => {
+	const { setUser } = useUserData();
+	setUser(user);
+
 	return (
 		<>
-			<UserPageComponent user={user} />
+			<UserPageComponent />
 		</>
 	);
 };
