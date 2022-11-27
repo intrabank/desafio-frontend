@@ -1,7 +1,13 @@
+import UserPageComponent from '@/components/pageComponents/userPage';
+
 type Props = {};
 
 const UserPage = (props: Props) => {
-	return <div>User</div>;
+	return (
+		<>
+			<UserPageComponent />
+		</>
+	);
 };
 
 export default UserPage;

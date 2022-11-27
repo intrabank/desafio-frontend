@@ -1,4 +1,4 @@
-import { Text } from '@/components/atoms';
+import { Divider, Text } from '@/components/atoms';
 import { Form } from '@/components/organisms';
 import Image from 'next/image';
 import {
@@ -20,7 +20,7 @@ const SignUpPage = () => {
 					<Text size='xl' weight='bold' as='h1'>
 						Teste técnico
 					</Text>
-					<div className='green-divider' />
+					<Divider />
 					<Text as='p' weight='light' size='md'>
 						Controle suas contas nacionais e internacionais em um único lugar!
 					</Text>

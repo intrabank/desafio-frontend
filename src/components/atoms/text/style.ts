@@ -34,6 +34,9 @@ const size = {
 };
 
 const weight = {
+	thin: {
+		fontWeight: '200',
+	},
 	light: {
 		fontWeight: '300',
 	},
