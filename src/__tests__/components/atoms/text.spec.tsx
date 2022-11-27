@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Text from '../../../components/atoms/text';
+import renderer from 'react-test-renderer';
 
 describe('Text', () => {
 	it('should render text', () => {
-		render(<Text>Test</Text>);
-		expect(screen.getByText('Test')).toBeInTheDocument();
+		const tree = renderer.create(<Text>Test</Text>).toJSON();
+		expect(tree).toMatchSnapshot();
 	});
 
 	it('should change with variants', () => {

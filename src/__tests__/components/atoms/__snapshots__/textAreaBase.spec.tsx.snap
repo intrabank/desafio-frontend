@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextAreaBase should render card component 1`] = `
+<textarea
+  className="c-gOvnqN c-gOvnqN-gFpoIP-state-idle"
+  type="text"
+/>
+`;

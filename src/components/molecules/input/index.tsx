@@ -26,6 +26,8 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
 					{label}
 				</Label>
 				<InputBase
+					aria-placeholder={label}
+					aria-invalid={state === 'error'}
 					type={type === 'password' ? passwordInputType : type}
 					{...props}
 					state={state}

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectItem should render label component 1`] = `
+<option
+  className="c-ixcDHV"
+  disabled={false}
+>
+  Test
+</option>
+`;

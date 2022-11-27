@@ -11,7 +11,7 @@ const UserCard = () => {
 	return (
 		<Card>
 			<UserCardContent>
-				<UserIcon placeholder={user.initials} />
+				<UserIcon inititals={user.initials} />
 				<UserCardText>
 					<Text weight='bold' size='xl' color='white'>
 						{`Bem vindo ${user.fullName}`}

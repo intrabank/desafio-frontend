@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea should render textarea 1`] = `
+<div
+  className="c-UFKVs"
+>
+  <label
+    className="c-bUsXAP c-bUsXAP-fXZMCZ-state-idle"
+    htmlFor="teste"
+    onMouseDown={[Function]}
+  >
+    Teste
+  </label>
+  <textarea
+    aria-invalid={false}
+    className="c-gOvnqN c-gOvnqN-gFpoIP-state-idle"
+  />
+</div>
+`;

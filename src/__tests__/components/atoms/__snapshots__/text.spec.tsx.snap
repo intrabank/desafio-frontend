@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should render text 1`] = `
+<p
+  className="c-eFhfvJ c-eFhfvJ-fPSeYF-color-white c-eFhfvJ-gJpNlm-size-md c-eFhfvJ-hZNfDR-weight-medium"
+>
+  Test
+</p>
+`;

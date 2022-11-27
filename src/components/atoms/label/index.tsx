@@ -10,7 +10,8 @@ interface Props extends React.HTMLAttributes<HTMLLabelElement> {
 const Label = ({ children, state = 'idle', ...props }: Props) => {
 	return (
 		<LabelStyle state={state} {...props}>
-			{children} {state === 'error' && <span>*</span>}
+			{children}
+			{state === 'error' && <span> *</span>}
 		</LabelStyle>
 	);
 };

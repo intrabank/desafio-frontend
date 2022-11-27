@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render button component 1`] = `
+<button
+  className="c-dInhNt"
+  type="submit"
+>
+  Button text
+</button>
+`;

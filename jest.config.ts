@@ -10,6 +10,12 @@ const customJestConfig = {
 	testPathIgnorePatterns: ['<rootDir>/src/__tests__/cypress'],
 	moduleDirectories: ['node_modules', '<rootDir>/'],
 	testEnvironment: 'jest-environment-jsdom',
+	moduleNameMapper: {
+		'^@/components(.*)$': '<rootDir>/src/components$1',
+		'^@/pages(.*)$': '<rootDir>/src/pages$1',
+		'^@/utils(.*)$': '<rootDir>/src/utils$1',
+		'^@/hooks(.*)$': '<rootDir>/src/hooks$1',
+	},
 };
 
 export default createJestConfig(customJestConfig);

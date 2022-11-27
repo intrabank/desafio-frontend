@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render user icon component 1`] = `
+<div
+  className="c-cmpvrW"
+>
+  <select
+    className="c-eXlpVV"
+    onClick={[Function]}
+  >
+    <option
+      className="c-ixcDHV"
+      disabled={true}
+      value=""
+    >
+      Selecionar País
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Afghanistan"
+    >
+      Afghanistan
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Albania"
+    >
+      Albania
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Algeria"
+    >
+      Algeria
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Andorra"
+    >
+      Andorra
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Angola"
+    >
+      Angola
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Antigua and Barbuda"
+    >
+      Antigua and Barbuda
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Argentina"
+    >
+      Argentina
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Armenia"
+    >
+      Armenia
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Australia"
+    >
+      Australia
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Austria"
+    >
+      Austria
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Azerbaijan"
+    >
+      Azerbaijan
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Bahamas"
+    >
+      Bahamas
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Bahrain"
+    >
+      Bahrain
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Bangladesh"
+    >
+      Bangladesh
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Barbados"
+    >
+      Barbados
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Belarus"
+    >
+      Belarus
+    </option>
+    <option
+      className="c-ixcDHV"
+      disabled={false}
+      value="Belgium"
+    >
+      Belgium
+    </option>
+  </select>
+  <div
+    className="c-bdGibU"
+  >
+    <svg
+      aria-hidden="true"
+      color="#fff"
+      fill="currentColor"
+      focusable="false"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        {
+          "color": "#fff",
+        }
+      }
+      viewBox="0 0 16 16"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+        fillRule="evenodd"
+      />
+    </svg>
+    <span
+      style={
+        {
+          "border": 0,
+          "clip": "rect(0, 0, 0, 0)",
+          "height": 1,
+          "margin": -1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "whiteSpace": "nowrap",
+          "width": 1,
+          "wordWrap": "normal",
+        }
+      }
+    >
+      Icon de seta para o select
+    </span>
+  </div>
+</div>
+`;

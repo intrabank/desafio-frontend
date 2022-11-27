@@ -2,15 +2,15 @@ import { Text } from '@/components/atoms';
 import { Container } from './style';
 
 type Props = {
-	placeholder?: string;
+	inititals?: string;
 };
 
-const UserIcon = ({ placeholder }: Props) => {
+const UserIcon = ({ inititals }: Props) => {
 	return (
 		<Container>
-			{placeholder && (
+			{inititals && (
 				<Text as='span' color='black' weight='medium' size='lg'>
-					{placeholder}
+					{inititals}
 				</Text>
 			)}
 		</Container>

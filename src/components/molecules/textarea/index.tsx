@@ -18,7 +18,12 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
 				<Label htmlFor={htmlFor} state={state}>
 					{label}
 				</Label>
-				<TextAreaBase ref={ref} {...props} state={state}></TextAreaBase>
+				<TextAreaBase
+					aria-invalid={state === 'error'}
+					ref={ref}
+					{...props}
+					state={state}
+				></TextAreaBase>
 				{error && <Error>{error}</Error>}
 			</TextAreaContainer>
 		);

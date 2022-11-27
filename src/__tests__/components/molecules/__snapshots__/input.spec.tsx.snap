@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render input 1`] = `
+<div
+  className="c-UFKVs"
+>
+  <label
+    className="c-bUsXAP c-bUsXAP-fXZMCZ-state-idle"
+    htmlFor="teste"
+    onMouseDown={[Function]}
+  >
+    Teste
+  </label>
+  <input
+    aria-invalid={false}
+    aria-placeholder="Teste"
+    className="c-gpMnof c-gpMnof-gFpoIP-state-idle"
+    type="text"
+  />
+</div>
+`;

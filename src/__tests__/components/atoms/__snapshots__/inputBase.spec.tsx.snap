@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputBase should render card component 1`] = `
+<input
+  className="c-gpMnof c-gpMnof-gFpoIP-state-idle"
+  type="text"
+/>
+`;

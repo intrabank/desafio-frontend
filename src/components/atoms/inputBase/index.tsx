@@ -3,7 +3,6 @@ import React from 'react';
 import { InputContainer } from './style';
 
 interface Props extends React.HTMLAttributes<HTMLInputElement> {
-	value?: string;
 	type: FieldsTypesType;
 	state: FieldState;
 }
