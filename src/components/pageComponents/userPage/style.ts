@@ -6,6 +6,11 @@ export const Container = styled('div', {
 	width: '100%',
 });
 
+export const UserCardContainer = styled('div', {
+	width: '55%',
+	height: '60%',
+});
+
 export const ImageContainer = styled('div', {
 	position: 'absolute',
 	width: '100%',

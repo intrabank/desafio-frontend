@@ -35,3 +35,21 @@ export interface FormFields {
 	bio: string;
 	notification: boolean;
 }
+
+export interface User {
+	id: number;
+	firstName: string;
+	lastName: string;
+	email: string;
+	password: string;
+	country: string;
+	dateOfBirthday: string;
+	bio: string;
+	receiveNotifications: boolean;
+}
+
+export interface FormatedUser extends User {
+	fullName: string;
+	initials: string;
+	formatedDate: string;
+}

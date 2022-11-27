@@ -1,23 +1,26 @@
 import { Card, Divider, Text } from '@/components/atoms';
 import { UserIcon } from '@/components/molecules';
+import { FormatedUser, User } from '@types';
 
 import React from 'react';
 import { UserCardContent, UserCardText } from './style';
 
-type Props = {};
+type Props = {
+	user: FormatedUser;
+};
 
-const UserCard = (props: Props) => {
+const UserCard = ({ user }: Props) => {
 	return (
 		<Card>
 			<UserCardContent>
-				<UserIcon placeholder='EM' />
+				<UserIcon placeholder={user.initials} />
 				<UserCardText>
 					<Text weight='bold' size='xl' color='white'>
-						Bem vindo Ellon Musk
+						{`Bem vindo ${user.fullName}`}
 					</Text>
 					<Divider />
 					<Text size='md' weight='light'>
-						Você nasceu no dia 04 de agosto de 1984.
+						{`Você nasceu no dia ${user.formatedDate}.`}
 					</Text>
 				</UserCardText>
 			</UserCardContent>

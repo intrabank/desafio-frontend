@@ -1,4 +1,4 @@
-import { createUser } from '@/services/createUser';
+import { createUser } from '@/services/apiServices/createUser';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 // eslint-disable-next-line import/no-anonymous-default-export

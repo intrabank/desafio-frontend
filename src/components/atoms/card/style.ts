@@ -9,6 +9,11 @@ export const CardContainer = styled('div', {
 	backdropFilter: 'blur(100px)',
 	borderRadius: '8px',
 	flex: '1',
+	height: '100%',
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	alignItems: 'center',
 	position: 'relative',
 	zIndex: '2',
 });

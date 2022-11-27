@@ -1,4 +1,4 @@
-import fetcher from './fetcher';
+import fetcher from '../fetcher';
 
 export const createUser = async (body: unknown) => {
 	return await fetcher(

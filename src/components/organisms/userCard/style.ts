@@ -11,6 +11,7 @@ export const UserCardContent = styled('div', {
 export const UserCardText = styled('div', {
 	display: 'inherit',
 	flexDirection: 'inherit',
+	textAlign: 'center',
 	gap: '$100',
 	justifyContent: 'inherit',
 	alignItems: 'inherit',
