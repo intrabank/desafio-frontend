@@ -1,14 +1,14 @@
-# :nail_care: Frontend challenge - Cadastro de usuário
+# :nail_care: Desafio Frontend - Cadastro de usuário
 
 Desafio para avaliar o candidato que queira ingressar no Intrabank como desenvolvedor frontend.
 
 ## O desafio
 
-Seu objetivo é criar uma jornada simples de cadastro de usuário utlizando [Next](https://nextjs.org/) e [React](https://reactjs.org/), seguindo o layout. É obrigatório o uso de algum framework de estilo, que trabalhe com o conceito css-in-js. Você também pode instalar alguma outra lib, caso entenda que faça sentido.  
+Seu objetivo é criar uma jornada simples de cadastro de usuário utlizando [Next](https://nextjs.org/) e [React](https://reactjs.org/), seguindo o layout. É obrigatório o uso de algum framework de estilo, que trabalhe com o conceito _css-in-js_. Você também pode instalar alguma outra lib, caso entenda que seja necessário.
 
 ## Sobre o layout
 
-O [layout](https://www.figma.com/file/bVq19HGbDCOCScIwLIBnbp/Teste-t%C3%A9cnico?node-id=0%3A1) fornecido não é muito complexo, nosso maior interesse é ver como você reutliza código e resolve os desafios. 
+O [layout](https://www.figma.com/file/bVq19HGbDCOCScIwLIBnbp/Teste-t%C3%A9cnico?node-id=0%3A1) fornecido não é muito complexo, já que o nosso maior interesse é ver como você reutliza código e resolve o desafio.
 
 ## Sobre a API
 
@@ -17,7 +17,9 @@ Temos duas rotas de uma API de usuário para que você possa desenvolver a aplic
 ```sh
 "https://637f50932f8f56e28e87af4a.mockapi.io/challenge"
 ```
+
 #### Criar usuário
+
 ```
 POST /challenge
 {
@@ -31,7 +33,9 @@ POST /challenge
     "receiveNotifications": Boolean
 }
 ```
+
 #### Obter dados do usuário
+
 ```
 GET /challenge/:id
 ```
@@ -41,8 +45,8 @@ GET /challenge/:id
 - CSS responsivo, semântico, reutilizável e seguindo boas práticas
 - Tipagem 
 - Componentização
-- Conhecimento em javascript 
-- Utilização correta do git 
+- Conhecimento em JavaScript 
+- Utilização correta do Git 
 
 ## Bônus
 
@@ -54,7 +58,7 @@ Caso você resolva fazer os seguintes itens, você ganhará um bônus durante a 
 
 ## Orientações
 
-Primeiramente, faça um fork e clone do projeto. Crie uma branch com o seu nome e sobrenome e depois instale as dependências.
+Primeiramente, faça um _fork_ e clone do projeto. Crie uma _branch_ com o seu nome e sobrenome e depois instale as dependências.
 
 **1. Clone do projeto** 
 ```sh
@@ -73,7 +77,7 @@ yarn install
 yarn dev
 ```
 
-Avaliaremos a sua **Pull Request** e se passar pelo nosso critério de avaliação inicial, marcaremos uma apresentação da aplicação. Boa sorte dev! Let's code! 
+Avaliaremos a sua **Pull Request** e se passar pelo nosso critério de avaliação inicial, marcaremos uma apresentação da aplicação. Boa sorte :blush:
 
 
 
