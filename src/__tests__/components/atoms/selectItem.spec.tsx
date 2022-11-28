@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-import SelectItem from '../../../components/atoms/selectItem';
+import SelectItem from '@/components/atoms/selectItem';
 
 describe('SelectItem', () => {
 	it('should render label component', () => {

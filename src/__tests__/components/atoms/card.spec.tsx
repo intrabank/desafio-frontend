@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Card from '../../../components/atoms/card';
+import Card from '@/components/atoms/card';
 import renderer from 'react-test-renderer';
 
 describe('Card', () => {

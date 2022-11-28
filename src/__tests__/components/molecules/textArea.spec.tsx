@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-import TextArea from '../../../components/molecules/textarea';
+import TextArea from '@/components/molecules/textarea';
 import { render, screen } from '@testing-library/react';
 
 describe('TextArea', () => {

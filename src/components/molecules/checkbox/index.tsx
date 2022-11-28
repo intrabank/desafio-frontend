@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from '@/components/atoms';
 import { CheckboxContainer } from './style';
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLInputElement> {
 	text: string;
 }
 

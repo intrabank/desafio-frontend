@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-import Checkbox from '../../../components/molecules/checkbox';
+import Checkbox from '@/components/molecules/checkbox';
 
 describe('Checkbox', () => {
 	it('should render checkbox component', () => {

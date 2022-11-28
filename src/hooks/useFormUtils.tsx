@@ -36,14 +36,23 @@ export const returnFieldByType = (
 
 	switch (field.type) {
 		case 'select':
-			return <Select {...hookFormProps} />;
+			return (
+				<Select
+					aria-invalid={errors[field.name] ? 'true' : 'false'}
+					role='listbox'
+					aria-label={field.label}
+					{...hookFormProps}
+				/>
+			);
 		case 'textarea':
 			return (
 				<TextArea
 					{...hookFormProps}
 					htmlFor={field.name}
 					label={field.label}
+					aria-label={field.label}
 					state={state}
+					role='textbox'
 					error={errors[field.name]?.message as string}
 					aria-invalid={errors[field.name] ? 'true' : 'false'}
 				/>
@@ -56,8 +65,10 @@ export const returnFieldByType = (
 					htmlFor={field.name}
 					error={errors[field.name]?.message as string}
 					label={field.label}
+					aria-label={field.label}
 					type={field.type}
 					state={state}
+					role='textbox'
 					aria-invalid={errors[field.name] ? 'true' : 'false'}
 				/>
 			);

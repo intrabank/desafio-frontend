@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import Label from '../../../components/atoms/label';
+import Label from '@/components/atoms/label';
 
 describe('Label', () => {
 	it('should render label component', () => {

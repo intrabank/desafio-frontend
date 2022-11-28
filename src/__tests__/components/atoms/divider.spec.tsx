@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import Divider from '../../../components/atoms/divider';
+import Divider from '@/components/atoms/divider';
 import renderer from 'react-test-renderer';
 
 describe('Divider', () => {

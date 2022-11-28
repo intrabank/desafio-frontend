@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TextAreaBase from '../../../components/atoms/textAreaBase';
+import TextAreaBase from '@/components/atoms/textAreaBase';
 import renderer from 'react-test-renderer';
 
 describe('TextAreaBase', () => {

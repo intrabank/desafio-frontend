@@ -83,11 +83,12 @@ const Form = () => {
 							);
 						})}
 						<Button
+							role='button'
 							aria-disabled={!isValid}
 							disabled={!isValid}
 							onClick={handleSubmit(onSubmit)}
 						>
-							Enviar
+							Cadastrar
 						</Button>
 					</FormFieldsContainer>
 
@@ -97,6 +98,7 @@ const Form = () => {
 						render={({ field: hookFormProps }) => {
 							return (
 								<Checkbox
+									role='checkbox'
 									text='Desejo receber notificações'
 									{...hookFormProps}
 								/>

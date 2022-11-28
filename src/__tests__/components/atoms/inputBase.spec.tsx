@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import InputBase from '../../../components/atoms/inputBase';
+import InputBase from '@/components/atoms/inputBase';
 import renderer from 'react-test-renderer';
 
 describe('InputBase', () => {

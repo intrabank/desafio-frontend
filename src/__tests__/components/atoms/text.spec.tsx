@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Text from '../../../components/atoms/text';
+import Text from '@/components/atoms/text';
 import renderer from 'react-test-renderer';
 
 describe('Text', () => {

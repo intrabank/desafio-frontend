@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-import Button from '../../../components/molecules/button';
+import Button from '@/components/molecules/button';
 
 describe('Button', () => {
 	it('should render button component', () => {

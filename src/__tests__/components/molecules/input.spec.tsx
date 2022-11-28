@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-import Input from '../../../components/molecules/input';
+import Input from '@/components/molecules/input';
 import { render, screen } from '@testing-library/react';
 
 describe('Input', () => {
