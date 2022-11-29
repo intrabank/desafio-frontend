@@ -27,6 +27,7 @@ export const { styled, theme, keyframes, css, globalCss } = createStitches({
 		space: {
 			50: '.25rem',
 			100: '.5rem',
+			150: '.75rem',
 			200: '1rem',
 			300: '1.5rem',
 			400: '2rem',
@@ -48,5 +49,8 @@ export const globalStyles = globalCss({
 		boxSizing: 'border-box',
 		fontFamily: 'Poppins',
 		'-webkit-font-smoothing': 'antialiased',
+	},
+	'@media (max-width: 640px)': {
+		html: { fontSize: '10px' },
 	},
 });

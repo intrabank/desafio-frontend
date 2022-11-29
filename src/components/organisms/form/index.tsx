@@ -52,15 +52,16 @@ const Form = () => {
 	return (
 		<Container>
 			<Card>
-				<FormHeaderContainer>
-					<Text as='h2' color='white' size='lg' weight='bold'>
-						Cadastre-se
-					</Text>
-					<Text as='p' color='white' size='sm' weight='light'>
-						Para começar, insira os dados abaixo:
-					</Text>
-				</FormHeaderContainer>
 				<FormContainer>
+					<FormHeaderContainer>
+						<Text as='h2' color='white' size='lg' weight='bold'>
+							Cadastre-se
+						</Text>
+						<Text as='p' color='white' size='sm' weight='light'>
+							Para começar, insira os dados abaixo:
+						</Text>
+					</FormHeaderContainer>
+
 					<FormFieldsContainer>
 						{fields.map((fieldItem, key) => {
 							return (

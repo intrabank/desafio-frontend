@@ -1,10 +1,10 @@
 import { styled } from '@stitches/react';
 
 export const Section = styled('section', {
-	position: 'relative',
 	zIndex: '2',
 	width: '50%',
 	display: 'flex',
+	alignItems: 'center',
 	justifyContent: 'center',
 
 	'&:nth-child(2)': {
@@ -25,6 +25,8 @@ export const ImageContainer = styled('div', {
 	zIndex: '1',
 	right: '0',
 	top: '50%',
+	height: '100%',
+	overflow: 'hidden',
 	transform: 'translateY(-50%)',
 	'@media (max-width: 640px)': {
 		left: '-50%',
@@ -33,16 +35,18 @@ export const ImageContainer = styled('div', {
 
 export const SignUpPageContainer = styled('div', {
 	width: '100%',
-	height: '100%',
+	height: '100vh',
 	display: 'flex',
 	justifyContent: 'space-evenly',
 	alignItems: 'center',
-	position: 'relative',
 	overflow: 'hidden',
 	'@media (max-width: 640px)': {
+		overflow: 'unset',
 		flexDirection: 'column-reverse',
 		alignItems: 'flex-start',
 		justifyContent: 'center',
+		height: '100%',
+		paddingBottom: '5%',
 	},
 });
 
@@ -53,8 +57,9 @@ export const TextContainer = styled('div', {
 	gap: '$200',
 
 	'@media (max-width: 640px)': {
+		height: '100%',
 		width: '100%',
-		padding: '0 15%',
+		padding: '15%',
 		textAlign: 'center',
 	},
 });

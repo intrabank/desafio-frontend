@@ -3,7 +3,6 @@ import { Form } from '@/components/organisms';
 import Image from 'next/image';
 import {
 	ImageContainer,
-	ImageStyled,
 	Section,
 	SignUpPageContainer,
 	TextContainer,

@@ -3,7 +3,7 @@ import { styled } from '@stitches/react';
 export const UserCardContent = styled('div', {
 	display: 'flex',
 	flexDirection: 'column',
-	gap: '40px',
+	gap: '2.5rem',
 	justifyContent: 'center',
 	alignItems: 'center',
 });

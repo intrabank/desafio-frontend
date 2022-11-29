@@ -14,6 +14,5 @@ export const CardContainer = styled('div', {
 	flexDirection: 'column',
 	justifyContent: 'center',
 	alignItems: 'center',
-	position: 'relative',
 	zIndex: '2',
 });
