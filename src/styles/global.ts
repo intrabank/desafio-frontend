@@ -1,6 +1,6 @@
-import { createStitches, ScaleValue, PropertyValue } from '@stitches/react';
+import { createStitches } from '@stitches/react';
 
-export const { styled, theme, keyframes, css, globalCss } = createStitches({
+export const { styled, theme, globalCss, getCssText } = createStitches({
 	theme: {
 		colors: {
 			dark1000: '#121212',

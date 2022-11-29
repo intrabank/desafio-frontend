@@ -3,8 +3,9 @@ import type { AppProps } from 'next/app';
 import Layout from '../components/templates/layout';
 import { UserContextProvider } from 'context/userContext';
 
+globalStyles();
+
 function MyApp({ Component, pageProps }: AppProps) {
-	globalStyles();
 	return (
 		<UserContextProvider>
 			<Layout>
