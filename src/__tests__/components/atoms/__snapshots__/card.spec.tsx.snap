@@ -2,7 +2,7 @@
 
 exports[`Card should render card component 1`] = `
 <div
-  className="c-caqmiR"
+  className="c-iRHVgi"
 >
   Test
 </div>

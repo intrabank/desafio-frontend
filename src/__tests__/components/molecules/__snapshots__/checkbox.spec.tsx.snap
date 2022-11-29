@@ -2,7 +2,7 @@
 
 exports[`Checkbox should render checkbox component 1`] = `
 <div
-  className="c-guwDxs"
+  className="c-faRsTb"
 >
   <input
     type="checkbox"
