@@ -17,6 +17,10 @@ const UserPage = ({ user }: Props) => {
 	return (
 		<>
 			<Head>
+				<meta
+					name='description'
+					content={`${user.fullName} - Desafio Frontend}`}
+				/>
 				<title>{user.fullName} - Desafio Frontend</title>
 			</Head>
 			<UserPageComponent />

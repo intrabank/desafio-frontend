@@ -10,7 +10,13 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
 	({ text, ...props }, ref) => {
 		return (
 			<CheckboxContainer>
-				<input ref={ref} {...props} type='checkbox' />
+				<input
+					role='checkbox'
+					aria-label={text}
+					ref={ref}
+					{...props}
+					type='checkbox'
+				/>
 				<Text weight='light' size='sm' as='span'>
 					{text}
 				</Text>

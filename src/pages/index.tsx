@@ -6,6 +6,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
+				<meta name='description' content='Olá :) Desafio Frontend' />
 				<title>Olá :) Desafio Frontend</title>
 			</Head>
 			<HomePage />

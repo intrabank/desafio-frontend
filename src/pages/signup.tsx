@@ -7,6 +7,10 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
+				<meta
+					name='description'
+					content='Cadastra seu usuário - Desafio Frontend'
+				/>
 				<title>Cadastra seu usuário - Desafio Frontend</title>
 			</Head>
 			<SignUpPage />

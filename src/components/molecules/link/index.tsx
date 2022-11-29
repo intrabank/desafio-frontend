@@ -7,8 +7,8 @@ interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
 
 const Link = ({ children, href, ...props }: Props) => {
 	return (
-		<NextLink passHref href={href}>
-			<StyledLink {...props}>{children}</StyledLink>
+		<NextLink {...props} passHref href={href}>
+			<StyledLink>{children}</StyledLink>
 		</NextLink>
 	);
 };
