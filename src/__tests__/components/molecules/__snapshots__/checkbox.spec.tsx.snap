@@ -5,6 +5,8 @@ exports[`Checkbox should render checkbox component 1`] = `
   className="c-faRsTb"
 >
   <input
+    aria-label="this is an checkbox text"
+    role="checkbox"
     type="checkbox"
   />
   <span
