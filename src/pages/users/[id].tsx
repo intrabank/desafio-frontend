@@ -4,6 +4,7 @@ import { getUser } from '@/services/getUser';
 import formatUser from '@/utils/formatters/formatUser';
 import { FormatedUser } from '@types';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import Head from 'next/head';
 
 type Props = {
 	user: FormatedUser;
@@ -15,6 +16,9 @@ const UserPage = ({ user }: Props) => {
 
 	return (
 		<>
+			<Head>
+				<title>{user.fullName} - Desafio Frontend</title>
+			</Head>
 			<UserPageComponent />
 		</>
 	);

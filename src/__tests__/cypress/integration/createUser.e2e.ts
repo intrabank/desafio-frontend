@@ -1,17 +1,14 @@
 describe('Create an user', () => {
-	beforeEach(() => {
+	it('should be able to go to sign up page', () => {
 		cy.visit('http://localhost:3000');
-	});
-
-	it('should have a form', () => {
-		cy.get('form').should('exist');
-	});
-
-	it('should have the words "Cadastrar"', () => {
-		cy.contains('Cadastrar').should('exist');
+		cy.contains('Cadastrar usuário').should('exist');
+		const anchorTag = cy.get('a');
+		anchorTag.contains('Cadastrar usuário').click();
+		cy.contains('Teste técnico').should('exist');
 	});
 
 	it('should user be able to change value from field', () => {
+		cy.visit('http://localhost:3000/signup');
 		cy.get('input[name="firstName"]').type('John');
 		cy.get('input[name="lastName"]').type('Doe');
 		cy.get('input[name="email"]').type('johndoe@gmail.com');
@@ -30,6 +27,7 @@ describe('Create an user', () => {
 	});
 
 	it('should not be able to submit with input values are in default value', () => {
+		cy.visit('http://localhost:3000/signup');
 		const button = cy.get('button');
 		button.should('be.disabled');
 	});
