@@ -6,4 +6,9 @@ export const HomePageContainer = styled("div", {
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
+
+  ".globe": {
+    display: "flex",
+    flex: 1,
+  },
 });
