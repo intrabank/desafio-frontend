@@ -1,11 +1,15 @@
-import { globalCss } from '@stitches/react'
-import { styled, css } from './theme'
-
+import { globalCss } from "./theme";
 
 export const globalStyles = globalCss({
-  '*': { margin: 0, padding: 0, boxSizing: 'border-box', fontFamily: 'Poppins' },
+  "*": {
+    margin: 0,
+    padding: 0,
+    boxSizing: "border-box",
+    fontFamily: "Poppins",
+  },
 
-  'body': {
-    backgroundColor: '$gray200',
-  }
-})
+  body: {
+    background: "$background",
+    minHeight: "100vh",
+  },
+});
