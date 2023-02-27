@@ -3,7 +3,9 @@ import { createStitches } from "@stitches/react";
 export const { styled, globalCss, getCssText } = createStitches({
   theme: {
     colors: {
-      background: "#121212",
+      dark1000: "#121212",
+      dark900: "#2A2A2A",
+      transparentDark900: "rgba(29, 29, 29, 0.5)",
     },
   },
 });

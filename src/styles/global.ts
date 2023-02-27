@@ -9,7 +9,11 @@ export const globalStyles = globalCss({
   },
 
   body: {
-    background: "$background",
+    background: "$dark1000",
     minHeight: "100vh",
+
+    "#__next": {
+      minHeight: "100vh",
+    },
   },
 });

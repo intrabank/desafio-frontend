@@ -1,10 +1,12 @@
+import { FormContainer } from "./FormComponent.styled";
+
 const FormComponent = () => {
   return (
-    <form>
+    <FormContainer>
       <header>
         <h1>Cadastre-se</h1>
       </header>
-    </form>
+    </FormContainer>
   );
 };
 
