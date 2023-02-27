@@ -1,7 +1,19 @@
+import { useState } from "react";
+import FloatLabel from "../../atoms/FloatLabel";
 import { Input } from "../../atoms/Inputs.styled";
 import { FormContainer } from "./FormComponent.styled";
 
 const FormComponent = () => {
+  const [focused, setFocused] = useState(false);
+
+  function handleFocus() {
+    setFocused(true);
+  }
+
+  function handleBlur() {
+    setFocused(false);
+  }
+
   return (
     <FormContainer>
       <header>
@@ -9,7 +21,8 @@ const FormComponent = () => {
         <p>Para começar, insira os dados abaixo</p>
       </header>
 
-      <Input />
+      {/* Name Input */}
+      <FloatLabel label="Nome" value="" onChange={() => ""} />
     </FormContainer>
   );
 };
