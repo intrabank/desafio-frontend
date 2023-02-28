@@ -11,4 +11,8 @@ export const HomePageContainer = styled("div", {
     display: "flex",
     flex: 1,
   },
+
+  "@bp2": {
+    padding: "0px",
+  },
 });
