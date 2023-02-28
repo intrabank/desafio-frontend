@@ -1,11 +1,6 @@
 import { keyframes } from "@stitches/react";
 import { styled } from "../../../styles/theme";
 
-const scaleUp = keyframes({
-  "0%": { height: "0%" },
-  "100%": { height: "136px" },
-});
-
 export const DropMenuContainer = styled("div", {
   position: "relative",
 
@@ -34,7 +29,6 @@ export const DropMenuContainer = styled("div", {
     outline: "1px solid $dark800",
     borderTop: "none",
     transition: "0.2s all",
-    animation: `${scaleUp} 0.4s ease forwards`,
 
     ul: {
       display: "flex",
