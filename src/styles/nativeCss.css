@@ -5,3 +5,9 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
 input[type=date]:focus::-webkit-datetime-edit {
     color: #fff !important;
 }
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
