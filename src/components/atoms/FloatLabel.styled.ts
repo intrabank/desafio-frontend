@@ -1,6 +1,6 @@
 import { styled } from "../../styles/theme";
 
-export const FloatLabelContainer = styled("div", {
+export const FloatLabelInputContainer = styled("div", {
   position: "relative",
 
   ".input-control": {

@@ -1,7 +1,12 @@
+// GENERAL
 import { useState } from "react";
-import FloatLabel from "../../atoms/FloatLabel";
-import { Input } from "../../atoms/Inputs.styled";
+
+// CSS
 import { FormContainer } from "./FormComponent.styled";
+
+// COMPONENTS
+import { FloatLabelInput, FloatLabelTextArea } from "../../atoms/FloatLabel";
+import { SubmitButton } from "../../atoms/Button.styled";
 
 const FormComponent = () => {
   const [focused, setFocused] = useState(false);
@@ -24,20 +29,20 @@ const FormComponent = () => {
 
       <div className="form-controls">
         {/* First Name Input */}
-        <FloatLabel label="Nome" type="text" value="" />
+        <FloatLabelInput label="Nome" type="text" value="" />
 
         {/* Last Name Input */}
-        <FloatLabel label="Sobrenome" type="text" value="" />
+        <FloatLabelInput label="Sobrenome" type="text" value="" />
 
         {/* E-mail Input */}
-        <FloatLabel label="E-mail" type="email" value="" />
+        <FloatLabelInput label="E-mail" type="email" value="" />
 
         {/* Birth Day Input */}
-        <FloatLabel label="Data de nascimento" type="date" value="" />
+        <FloatLabelInput label="Data de nascimento" type="date" value="" />
 
         {/* Password Input */}
         <div className="input-container">
-          <FloatLabel
+          <FloatLabelInput
             label="Senha"
             type={showPassword ? "text" : "password"}
             value=""
@@ -60,7 +65,10 @@ const FormComponent = () => {
         </div>
 
         {/* Bio Input */}
-        <FloatLabel label="Bio" style="bio" type="text" value="" />
+        <FloatLabelTextArea label="Bio" style="bio" type="text" value="" />
+
+        {/* Submit Button */}
+        <SubmitButton>Cadastrar</SubmitButton>
       </div>
     </FormContainer>
   );
