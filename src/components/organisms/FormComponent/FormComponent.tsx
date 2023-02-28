@@ -35,10 +35,10 @@ const FormComponent = () => {
         <FloatLabel label="Data de nascimento" type="date" value="" />
 
         {/* Password Input */}
-        <FloatLabel label="E-mail" type="email" value="" />
+        <FloatLabel label="Senha" type="password" value="" />
 
         {/* Bio Input */}
-        <FloatLabel label="E-mail" type="email" value="" />
+        <FloatLabel label="Bio" style="bio" type="text" value="" />
       </div>
       {/* Name Input */}
     </FormContainer>

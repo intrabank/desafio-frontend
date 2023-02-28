@@ -18,6 +18,10 @@ export const FloatLabelContainer = styled("div", {
     },
   },
 
+  ".bio": {
+    height: "92px",
+  },
+
   ".input-label": {
     position: "absolute",
     top: "14px",

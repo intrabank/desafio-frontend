@@ -5,9 +5,10 @@ interface FloatLabelProps {
   label: string;
   value: string;
   type: string;
+  style?: string;
 }
 
-const FloatLabel = ({ label, value, type }: FloatLabelProps) => {
+const FloatLabel = ({ label, value, type, style }: FloatLabelProps) => {
   const [focused, setFocused] = useState(false);
 
   function handleFloat(e: any) {
@@ -24,7 +25,7 @@ const FloatLabel = ({ label, value, type }: FloatLabelProps) => {
       <input
         type={type}
         onChange={(e) => handleFloat(e.target.value)}
-        className="input-control"
+        className={style ? `input-control ${style}` : "input-control"}
         required
       />
 
