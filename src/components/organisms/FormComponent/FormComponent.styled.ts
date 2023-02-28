@@ -41,4 +41,8 @@ export const FormContainer = styled("div", {
       },
     },
   },
+
+  "@bp1": {
+    padding: "54px 34px",
+  },
 });
