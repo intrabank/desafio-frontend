@@ -45,7 +45,6 @@ const FormComponent = () => {
           <span
             onClick={() => {
               setShowPassword(!showPassword);
-              console.log(showPassword);
             }}
             className="eye-icon"
             id="show-password"
@@ -63,7 +62,6 @@ const FormComponent = () => {
         {/* Bio Input */}
         <FloatLabel label="Bio" style="bio" type="text" value="" />
       </div>
-      {/* Name Input */}
     </FormContainer>
   );
 };

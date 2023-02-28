@@ -18,8 +18,6 @@ const FloatLabel = ({ label, value, type, style }: FloatLabelProps) => {
     return setFocused(false);
   }
 
-  console.log(focused);
-
   return (
     <FloatLabelContainer>
       <input
