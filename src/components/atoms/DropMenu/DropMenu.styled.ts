@@ -1,4 +1,10 @@
+import { keyframes } from "@stitches/react";
 import { styled } from "../../../styles/theme";
+
+const scaleUp = keyframes({
+  "0%": { height: "0%" },
+  "100%": { height: "136px" },
+});
 
 export const DropMenuContainer = styled("div", {
   position: "relative",
@@ -13,6 +19,7 @@ export const DropMenuContainer = styled("div", {
     color: "#888888",
     transition: "0.2s all",
     textAlign: "left",
+    cursor: "default",
   },
 
   ".dropmenu-options": {
@@ -26,6 +33,8 @@ export const DropMenuContainer = styled("div", {
     borderBottomRightRadius: "8px",
     outline: "1px solid $dark800",
     borderTop: "none",
+    transition: "0.2s all",
+    animation: `${scaleUp} 0.4s ease forwards`,
 
     ul: {
       display: "flex",
@@ -38,6 +47,11 @@ export const DropMenuContainer = styled("div", {
       li: {
         listStyle: "none",
         color: "$dark300",
+
+        "&:hover": {
+          color: "#fff",
+          cursor: "default",
+        },
       },
     },
   },
