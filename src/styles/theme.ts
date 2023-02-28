@@ -9,6 +9,7 @@ export const { styled, globalCss, getCssText } = createStitches({
       transparentDark900: "rgba(29, 29, 29, 0.5)",
       dark800: "#414141",
       dark500: "#888888",
+      dark300: "#B8B8B8",
 
       primaryColor: "#00F2B1",
     },

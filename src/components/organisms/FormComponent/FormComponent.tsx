@@ -10,6 +10,7 @@ import {
   FloatLabelTextArea,
 } from "../../atoms/FloatLabel/FloatLabel";
 import { SubmitButton } from "../../atoms/Button.styled";
+import DropMenu from "../../atoms/DropMenu/DropMenu";
 
 const FormComponent = () => {
   const [focused, setFocused] = useState(false);
@@ -66,6 +67,9 @@ const FormComponent = () => {
             />
           </span>
         </div>
+
+        {/* Country DropMenu */}
+        <DropMenu label="Selecione seu país" />
 
         {/* Bio Input */}
         <FloatLabelTextArea label="Bio" style="bio" type="text" value="" />
