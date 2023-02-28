@@ -100,6 +100,14 @@ const FormComponent = () => {
       document.getElementById("country")?.classList.remove("wrong-field");
     }
 
+    // BIRTHDATE VALIDATION
+    if (!birthdate) {
+      erros.password = "Insira sua data de nascimento";
+      document.getElementById("birthdate")?.classList.add("wrong-field");
+    } else {
+      document.getElementById("birthdate")?.classList.remove("wrong-field");
+    }
+
     console.log(erros);
     return erros;
   };
@@ -141,8 +149,9 @@ const FormComponent = () => {
 
         {/* Birth Day Input */}
         <FloatLabelInput
-          onChange={() => ""}
+          onChange={(event) => setBirthdate(event.target.value)}
           label="Data de nascimento"
+          id="birthdate"
           type="date"
           value=""
         />
