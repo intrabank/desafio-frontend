@@ -24,4 +24,10 @@ export const FormContainer = styled("div", {
       fontWeight: "300",
     },
   },
+
+  ".form-controls": {
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+  },
 });

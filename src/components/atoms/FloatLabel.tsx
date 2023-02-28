@@ -4,10 +4,10 @@ import { FloatLabelContainer } from "./FloatLabel.styled";
 interface FloatLabelProps {
   label: string;
   value: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  type: string;
 }
 
-const FloatLabel = ({ label, value }: FloatLabelProps) => {
+const FloatLabel = ({ label, value, type }: FloatLabelProps) => {
   const [focused, setFocused] = useState(false);
 
   function handleFloat(e: any) {
@@ -22,7 +22,7 @@ const FloatLabel = ({ label, value }: FloatLabelProps) => {
   return (
     <FloatLabelContainer>
       <input
-        type="text"
+        type={type}
         onChange={(e) => handleFloat(e.target.value)}
         className="input-control"
       />
