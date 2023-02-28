@@ -5,6 +5,7 @@ import { FormContainer } from "./FormComponent.styled";
 
 const FormComponent = () => {
   const [focused, setFocused] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   function handleFocus() {
     setFocused(true);
@@ -35,7 +36,29 @@ const FormComponent = () => {
         <FloatLabel label="Data de nascimento" type="date" value="" />
 
         {/* Password Input */}
-        <FloatLabel label="Senha" type="password" value="" />
+        <div className="input-container">
+          <FloatLabel
+            label="Senha"
+            type={showPassword ? "text" : "password"}
+            value=""
+          />
+          <span
+            onClick={() => {
+              setShowPassword(!showPassword);
+              console.log(showPassword);
+            }}
+            className="eye-icon"
+            id="show-password"
+          >
+            <img
+              src={
+                showPassword
+                  ? "/assets/hidePassword.png"
+                  : "/assets/showPassword.png"
+              }
+            />
+          </span>
+        </div>
 
         {/* Bio Input */}
         <FloatLabel label="Bio" style="bio" type="text" value="" />

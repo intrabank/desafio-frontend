@@ -29,5 +29,16 @@ export const FormContainer = styled("div", {
     display: "flex",
     flexDirection: "column",
     gap: "16px",
+
+    ".input-container": {
+      position: "relative",
+
+      ".eye-icon": {
+        zIndex: 9999,
+        position: "absolute",
+        top: "18%",
+        right: "15px",
+      },
+    },
   },
 });
