@@ -50,4 +50,10 @@ export const FloatLabelInputContainer = styled("div", {
       top: "4px",
       fontSize: "12px",
     },
+
+  ".error-message": {
+    marginTop: "8px",
+    color: "$error",
+    textAlign: "left",
+  },
 });

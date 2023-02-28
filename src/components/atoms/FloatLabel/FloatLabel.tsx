@@ -7,6 +7,7 @@ interface FloatLabelProps {
   type: string;
   style?: string;
   id?: string;
+  error?: any;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -17,6 +18,7 @@ export const FloatLabelInput = ({
   style,
   onChange,
   id,
+  error,
 }: FloatLabelProps) => {
   return (
     <FloatLabelInputContainer>
@@ -32,6 +34,8 @@ export const FloatLabelInput = ({
       />
 
       <label className={`input-label`}>{label}</label>
+
+      {error && <p className="error-message">{error}</p>}
     </FloatLabelInputContainer>
   );
 };

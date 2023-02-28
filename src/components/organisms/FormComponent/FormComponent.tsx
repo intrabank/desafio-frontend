@@ -17,6 +17,7 @@ type error = {
   firstName?: string;
   lastName?: string;
   email?: string;
+  birthdate?: string;
   password?: string;
   biography?: string;
   country?: string;
@@ -51,6 +52,7 @@ const FormComponent = () => {
     });
 
     const result = await checkErrors();
+    setError(result);
   };
 
   // CHECK FORM ERRORS
@@ -102,7 +104,7 @@ const FormComponent = () => {
 
     // BIRTHDATE VALIDATION
     if (!birthdate) {
-      erros.password = "Insira sua data de nascimento";
+      erros.birthdate = "Insira sua data de nascimento";
       document.getElementById("birthdate")?.classList.add("wrong-field");
     } else {
       document.getElementById("birthdate")?.classList.remove("wrong-field");
@@ -127,6 +129,7 @@ const FormComponent = () => {
           type="text"
           value={firstName}
           id="first-name"
+          error={error.firstName ? error.firstName : null}
         />
 
         {/* Last Name Input */}
@@ -136,6 +139,7 @@ const FormComponent = () => {
           type="text"
           value=""
           id="last-name"
+          error={error.lastName ? error.lastName : null}
         />
 
         {/* E-mail Input */}
@@ -145,15 +149,17 @@ const FormComponent = () => {
           type="email"
           value=""
           id="email"
+          error={error.email ? error.email : null}
         />
 
-        {/* Birth Day Input */}
+        {/* Birthdate Input */}
         <FloatLabelInput
           onChange={(event) => setBirthdate(event.target.value)}
           label="Data de nascimento"
           id="birthdate"
           type="date"
           value=""
+          error={error.birthdate ? error.birthdate : null}
         />
 
         {/* Password Input */}
@@ -164,6 +170,7 @@ const FormComponent = () => {
             type={showPassword ? "text" : "password"}
             value=""
             id="password"
+            error={error.password ? error.password : null}
           />
           <span
             onClick={() => {
