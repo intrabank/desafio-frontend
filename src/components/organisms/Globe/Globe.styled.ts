@@ -19,3 +19,25 @@ export const GlobeContainer = styled("div", {
     zIndex: "-1",
   },
 });
+
+export const TextContainer = styled("div", {
+  position: "absolute",
+  right: "100px",
+  fontFamily: "$default",
+  width: "353px",
+  height: "147px",
+  top: "35%",
+  color: "#FFF",
+
+  h1: {
+    fontWeight: 700,
+    fontSize: "45px",
+    lineHeight: "130%",
+  },
+
+  p: {
+    fontWeight: 300,
+    fontSize: "18px",
+    lineHeight: "130%",
+  },
+});
