@@ -38,16 +38,12 @@ const FormComponent = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    console.log(firstName);
+    var errorsDiv = document.querySelectorAll(".input-control");
+    errorsDiv.forEach((div) => {
+      div.classList.remove("wrong-field");
+    });
 
     const result = await checkErrors();
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFirstName(event.target.value);
-    console.log(firstName);
-
-    return firstName;
   };
 
   // CHECK FORM ERRORS
@@ -56,6 +52,11 @@ const FormComponent = () => {
 
     if (!firstName) {
       erros.firstName = "Nome inválido";
+      document.getElementById("first-name")?.classList.add("wrong-field");
+    }
+
+    if (!lastName) {
+      erros.lastName = "Sobrenome inválido";
     }
 
     console.log(erros);
@@ -72,29 +73,27 @@ const FormComponent = () => {
       <div className="form-controls">
         {/* First Name Input */}
         <FloatLabelInput
-          onChange={handleInputChange}
+          onChange={(event) => setFirstName(event.target.value)}
           label="Nome"
           type="text"
           value={firstName}
-          placeholder="\"
+          id="first-name"
         />
 
         {/* Last Name Input */}
         <FloatLabelInput
-          onChange={() => ""}
+          onChange={(event) => setLastName(event.target.value)}
           label="Sobrenome"
           type="text"
           value=""
-          placeholder="\"
         />
 
         {/* E-mail Input */}
         <FloatLabelInput
-          onChange={() => ""}
+          onChange={(event) => setEmail(event.target.value)}
           label="E-mail"
           type="email"
           value=""
-          placeholder="\"
         />
 
         {/* Birth Day Input */}
@@ -103,7 +102,6 @@ const FormComponent = () => {
           label="Data de nascimento"
           type="date"
           value=""
-          placeholder="\"
         />
 
         {/* Password Input */}
@@ -113,7 +111,6 @@ const FormComponent = () => {
             label="Senha"
             type={showPassword ? "text" : "password"}
             value=""
-            placeholder="\"
           />
           <span
             onClick={() => {
@@ -142,7 +139,6 @@ const FormComponent = () => {
           style="bio"
           type="text"
           value=""
-          placeholder="\"
         />
 
         {/* Submit Button */}

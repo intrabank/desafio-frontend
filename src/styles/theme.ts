@@ -11,6 +11,7 @@ export const { styled, globalCss, getCssText } = createStitches({
       dark500: "#888888",
       dark300: "#B8B8B8",
 
+      error: "#FA4D56",
       primaryColor: "#00F2B1",
     },
   },

@@ -16,6 +16,10 @@ export const FloatLabelInputContainer = styled("div", {
     "&:focus": {
       outline: "1px solid #FFF",
     },
+
+    "&.wrong-field": {
+      outline: "1px solid $error",
+    },
   },
 
   ".bio": {
