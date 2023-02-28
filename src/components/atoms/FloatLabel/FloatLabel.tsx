@@ -24,9 +24,11 @@ export const FloatLabelInput = ({
         type={type}
         onChange={onChange}
         className={style ? `input-control ${style}` : "input-control"}
-        placeholder="/"
+        placeholder="⠀"
         id={id}
         required
+        min="1997-01-01"
+        max="2030-12-31"
       />
 
       <label className={`input-label`}>{label}</label>
@@ -49,7 +51,7 @@ export const FloatLabelTextArea = ({ label, style }: FloatLabelProps) => {
       <textarea
         onChange={(e) => handleFloat(e.target.value)}
         className={style ? `input-control ${style}` : "input-control"}
-        placeholder="/"
+        placeholder="⠀"
       />
 
       <label className={`input-label`}>{label}</label>

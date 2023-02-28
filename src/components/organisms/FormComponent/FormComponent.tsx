@@ -19,7 +19,7 @@ type error = {
   email?: string;
   password?: string;
   biography?: string;
-  selectedOption?: string;
+  country?: string;
 };
 
 const FormComponent = () => {
@@ -31,8 +31,15 @@ const FormComponent = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [birthdate, setBirthdate] = useState("");
+  const [country, setCountry] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({} as error);
+
+  function handleCountry(country: any) {
+    setCountry(country);
+
+    console.log(country);
+  }
 
   // HANDLE SUBMIT ACTION
   const handleSubmit = async (event: any) => {
@@ -50,13 +57,47 @@ const FormComponent = () => {
   const checkErrors = () => {
     const erros = {} as error;
 
+    const filter =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    // FIRST NAME VALIDATION
     if (!firstName) {
       erros.firstName = "Nome inválido";
       document.getElementById("first-name")?.classList.add("wrong-field");
+    } else {
+      document.getElementById("first-name")?.classList.remove("wrong-field");
     }
 
+    // LAST NAME VALIDATION
     if (!lastName) {
       erros.lastName = "Sobrenome inválido";
+      document.getElementById("last-name")?.classList.add("wrong-field");
+    } else {
+      document.getElementById("last-name")?.classList.remove("wrong-field");
+    }
+
+    // E-MAIL VALIDATION
+    if (!filter.test(email)) {
+      erros.email = "E-mail inválido";
+      document.getElementById("email")?.classList.add("wrong-field");
+    } else {
+      document.getElementById("email")?.classList.remove("wrong-field");
+    }
+
+    // PASSWORD VALIDATION
+    if (!password || password.length < 6) {
+      erros.password = "Sua senha precisa ter mais de 6 caracteres";
+      document.getElementById("password")?.classList.add("wrong-field");
+    } else {
+      document.getElementById("password")?.classList.remove("wrong-field");
+    }
+
+    // COUNTRY VALIDATION
+    if (country === "") {
+      erros.country = "Você precisa selecionar um país";
+      document.getElementById("country")?.classList.add("wrong-field");
+    } else {
+      document.getElementById("country")?.classList.remove("wrong-field");
     }
 
     console.log(erros);
@@ -86,6 +127,7 @@ const FormComponent = () => {
           label="Sobrenome"
           type="text"
           value=""
+          id="last-name"
         />
 
         {/* E-mail Input */}
@@ -94,6 +136,7 @@ const FormComponent = () => {
           label="E-mail"
           type="email"
           value=""
+          id="email"
         />
 
         {/* Birth Day Input */}
@@ -107,10 +150,11 @@ const FormComponent = () => {
         {/* Password Input */}
         <div className="input-container">
           <FloatLabelInput
-            onChange={() => ""}
+            onChange={(event) => setPassword(event.target.value)}
             label="Senha"
             type={showPassword ? "text" : "password"}
             value=""
+            id="password"
           />
           <span
             onClick={() => {
@@ -130,7 +174,11 @@ const FormComponent = () => {
         </div>
 
         {/* Country DropMenu */}
-        <DropMenu label="Selecione seu país" />
+        <DropMenu
+          handleCountry={handleCountry}
+          id="country"
+          label="Selecione seu país"
+        />
 
         {/* Bio Input */}
         <FloatLabelTextArea

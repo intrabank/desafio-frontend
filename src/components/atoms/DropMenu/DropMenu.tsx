@@ -4,16 +4,16 @@ import { useState } from "react";
 
 interface DropMenuProps {
   label: string;
+  handleCountry: any;
+  id: string;
 }
 
-const DropMenu = ({ label }: DropMenuProps) => {
+const DropMenu = ({ label, handleCountry, id }: DropMenuProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
 
-  console.log(selectedOption);
-
   return (
-    <DropMenuContainer>
+    <DropMenuContainer id={id}>
       <div className="dropmenu-wrapper" onClick={() => setMenuOpen(!menuOpen)}>
         <p>{selectedOption === "" ? label : selectedOption}</p>
       </div>
@@ -23,6 +23,7 @@ const DropMenu = ({ label }: DropMenuProps) => {
             {countries.map((country) => (
               <li
                 onClick={() => {
+                  handleCountry(country);
                   setSelectedOption(country);
                   setMenuOpen(false);
                 }}

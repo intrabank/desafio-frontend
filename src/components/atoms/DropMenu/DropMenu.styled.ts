@@ -3,6 +3,11 @@ import { styled } from "../../../styles/theme";
 
 export const DropMenuContainer = styled("div", {
   position: "relative",
+  borderRadius: "8px",
+
+  "&.wrong-field": {
+    outline: "1px solid $error",
+  },
 
   ".dropmenu-wrapper": {
     background: "$dark950",
