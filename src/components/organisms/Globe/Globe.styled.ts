@@ -20,6 +20,14 @@ export const GlobeContainer = styled("div", {
   },
 });
 
+export const Rectangle = styled("div", {
+  background: "$primaryColor",
+  width: "43px",
+  height: "11px",
+  borderRadius: "20px",
+  margin: "16px 0",
+});
+
 export const TextContainer = styled("div", {
   position: "absolute",
   right: "100px",
@@ -39,5 +47,10 @@ export const TextContainer = styled("div", {
     fontWeight: 300,
     fontSize: "18px",
     lineHeight: "130%",
+  },
+
+  // Style for 1280px width
+  "@bp2": {
+    display: "none",
   },
 });

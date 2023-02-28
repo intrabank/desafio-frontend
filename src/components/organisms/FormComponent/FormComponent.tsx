@@ -5,7 +5,10 @@ import { useState } from "react";
 import { FormContainer } from "./FormComponent.styled";
 
 // COMPONENTS
-import { FloatLabelInput, FloatLabelTextArea } from "../../atoms/FloatLabel";
+import {
+  FloatLabelInput,
+  FloatLabelTextArea,
+} from "../../atoms/FloatLabel/FloatLabel";
 import { SubmitButton } from "../../atoms/Button.styled";
 
 const FormComponent = () => {

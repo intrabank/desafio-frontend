@@ -1,10 +1,11 @@
-import { GlobeContainer, TextContainer } from "./Globe.styled";
+import { GlobeContainer, Rectangle, TextContainer } from "./Globe.styled";
 
 const Globe = () => {
   return (
     <GlobeContainer>
       <TextContainer>
         <h1>Teste técnico</h1>
+        <Rectangle />
         <p>
           Controle suas contas nacionais e internacionais em um único lugar!
         </p>
