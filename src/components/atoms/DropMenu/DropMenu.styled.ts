@@ -39,6 +39,8 @@ export const DropMenuContainer = styled("div", {
       gap: "16px",
 
       li: {
+        textAlign: "left",
+        width: "100%",
         listStyle: "none",
         color: "$dark300",
 

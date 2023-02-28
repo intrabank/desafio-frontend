@@ -6,6 +6,10 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: "border-box",
     fontFamily: "Poppins",
+
+    "::placeholder": {
+      color: "$dark950",
+    },
   },
 
   body: {

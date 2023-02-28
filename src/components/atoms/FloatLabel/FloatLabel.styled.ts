@@ -40,4 +40,10 @@ export const FloatLabelInputContainer = styled("div", {
     top: "4px",
     fontSize: "0.75rem",
   },
+
+  ".input-control:focus + .input-label,.input-control:not(:placeholder-shown) + .input-label, .input-control.has-value + .input-label":
+    {
+      top: "4px",
+      fontSize: "12px",
+    },
 });

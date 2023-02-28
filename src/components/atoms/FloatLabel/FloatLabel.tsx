@@ -6,6 +6,8 @@ interface FloatLabelProps {
   value: string;
   type: string;
   style?: string;
+  placeholder?: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const FloatLabelInput = ({
@@ -13,31 +15,29 @@ export const FloatLabelInput = ({
   value,
   type,
   style,
+  onChange,
+  placeholder,
 }: FloatLabelProps) => {
-  const [focused, setFocused] = useState(false);
-
-  function handleFloat(e: any) {
-    if (e.length > 0) {
-      return setFocused(true);
-    }
-    return setFocused(false);
-  }
-
   return (
     <FloatLabelInputContainer>
       <input
         type={type}
-        onChange={(e) => handleFloat(e.target.value)}
+        onChange={onChange}
         className={style ? `input-control ${style}` : "input-control"}
+        placeholder={placeholder}
         required
       />
 
-      <label className={`input-label ${focused ? "float" : ""}`}>{label}</label>
+      <label className={`input-label`}>{label}</label>
     </FloatLabelInputContainer>
   );
 };
 
-export const FloatLabelTextArea = ({ label, style }: FloatLabelProps) => {
+export const FloatLabelTextArea = ({
+  label,
+  style,
+  placeholder,
+}: FloatLabelProps) => {
   const [focused, setFocused] = useState(false);
 
   function handleFloat(e: any) {
@@ -52,9 +52,10 @@ export const FloatLabelTextArea = ({ label, style }: FloatLabelProps) => {
       <textarea
         onChange={(e) => handleFloat(e.target.value)}
         className={style ? `input-control ${style}` : "input-control"}
+        placeholder={placeholder}
       />
 
-      <label className={`input-label ${focused ? "float" : ""}`}>{label}</label>
+      <label className={`input-label`}>{label}</label>
     </FloatLabelInputContainer>
   );
 };
