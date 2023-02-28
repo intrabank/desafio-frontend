@@ -34,6 +34,7 @@ const FormComponent = () => {
   const [birthdate, setBirthdate] = useState("");
   const [country, setCountry] = useState("");
   const [password, setPassword] = useState("");
+  const [biography, setBiography] = useState("");
   const [error, setError] = useState({} as error);
 
   function handleCountry(country: any) {
@@ -53,6 +54,24 @@ const FormComponent = () => {
 
     const result = await checkErrors();
     setError(result);
+
+    if (firstName && lastName && email && password && country) {
+      await fetch("https://637f50932f8f56e28e87af4a.mockapi.io/challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          password,
+          dateOfBirthday: birthdate,
+          bio: biography,
+          country: country,
+        }),
+      }).then((res) => res.json());
+
+      console.log(firstName);
+    }
   };
 
   // CHECK FORM ERRORS
