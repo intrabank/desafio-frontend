@@ -25,6 +25,7 @@ const FloatLabel = ({ label, value, type }: FloatLabelProps) => {
         type={type}
         onChange={(e) => handleFloat(e.target.value)}
         className="input-control"
+        required
       />
 
       <label className={`input-label ${focused ? "float" : ""}`}>{label}</label>

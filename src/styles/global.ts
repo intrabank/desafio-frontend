@@ -16,9 +16,4 @@ export const globalStyles = globalCss({
       minHeight: "100vh",
     },
   },
-
-  "-webkit-datetime-edit-year-field:not([aria-valuenow]), -webkit-datetime-edit-month-field:not([aria-valuenow]), -webkit-datetime-edit-day-field:not([aria-valuenow])":
-    {
-      color: "transparent",
-    },
 });
