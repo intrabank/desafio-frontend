@@ -1,5 +1,4 @@
-import { styled } from "../../../styles/theme";
-
+import { styled } from "../../../pages/styles/theme";
 export const FloatLabelInputContainer = styled("div", {
   position: "relative",
 

@@ -1,4 +1,4 @@
-import { styled } from "../../../styles/theme";
+import { styled } from "../../../pages/styles/theme";
 
 export const GlobeContainer = styled("div", {
   flex: 1,

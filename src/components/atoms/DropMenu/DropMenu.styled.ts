@@ -1,5 +1,5 @@
 import { keyframes } from "@stitches/react";
-import { styled } from "../../../styles/theme";
+import { styled } from "../../../pages/styles/theme";
 
 export const DropMenuContainer = styled("div", {
   position: "relative",

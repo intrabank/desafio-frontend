@@ -1,4 +1,4 @@
-import { styled } from "../../../styles/theme";
+import { styled } from "../../../pages/styles/theme";
 
 export const HomePageContainer = styled("div", {
   padding: "77px 100px",

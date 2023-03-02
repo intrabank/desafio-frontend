@@ -1,4 +1,4 @@
-import { styled } from "../../styles/theme";
+import { styled } from "../../pages/styles/theme";
 
 export const SubmitButton = styled("button", {
   padding: "16px 24px",

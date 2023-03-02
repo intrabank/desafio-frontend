@@ -1,5 +1,6 @@
 // GENERAL
 import { useState } from "react";
+import Router from "next/router";
 
 // CSS
 import { FormContainer } from "./FormComponent.styled";
@@ -68,7 +69,11 @@ const FormComponent = () => {
           bio: biography,
           country: country,
         }),
-      }).then((res) => res.json());
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          Router.push(`/challenge/${data.id}`);
+        });
 
       console.log(firstName);
     }

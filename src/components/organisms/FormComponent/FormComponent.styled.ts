@@ -1,4 +1,4 @@
-import { styled } from "../../../styles/theme";
+import { styled } from "../../../pages/styles/theme";
 
 export const FormContainer = styled("div", {
   background: "$transparentDark900",
