@@ -42,7 +42,9 @@ export default function Page({
   return (
     <>
       <Head>
-        <title>Intrabank - Desafio Front-end</title>
+        <title>
+          Intrabank - {firstName} {lastName}
+        </title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -56,7 +58,11 @@ export default function Page({
         />
       </Head>
 
-      <ChallengePage firstName={firstName} lastName={lastName} />
+      <ChallengePage
+        firstName={firstName}
+        lastName={lastName}
+        dateOfBirthday={dateOfBirthday}
+      />
     </>
   );
 }

@@ -19,6 +19,7 @@ export const FeedbackBox = styled("div", {
   width: "820px",
   height: "428px",
   background: "rgba(29, 29, 29, 0.5)",
+  border: "2px solid $dark900",
   borderRadius: "8px",
   display: "flex",
   flexDirection: "column",

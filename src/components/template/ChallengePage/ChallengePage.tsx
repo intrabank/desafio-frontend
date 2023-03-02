@@ -5,9 +5,40 @@ import { ChallengePageContainer, FeedbackBox } from "./ChallengePage.styled";
 interface ChallengeProps {
   firstName: string;
   lastName: string;
+  dateOfBirthday: Date;
 }
 
-const ChallengePage = ({ firstName, lastName }: ChallengeProps) => {
+const ChallengePage = ({
+  firstName,
+  lastName,
+  dateOfBirthday,
+}: ChallengeProps) => {
+  let monName = new Array(
+    "janeiro",
+    "fevereiro",
+    "março",
+    "abril",
+    "maio",
+    "junho",
+    "julho",
+    "agosto",
+    "setembro",
+    "outubro",
+    "novembro",
+    "dezembro"
+  );
+
+  const date = new Date(dateOfBirthday);
+
+  /* Day */
+  let day = date.getDate() + 1;
+
+  /* Month */
+  let month = monName[date.getMonth()];
+
+  /* Month */
+  let year = date.getFullYear();
+
   return (
     <ChallengePageContainer>
       <FeedbackBox>
@@ -22,7 +53,9 @@ const ChallengePage = ({ firstName, lastName }: ChallengeProps) => {
 
         <Rectangle />
 
-        <p className="birthdate">Você nasceu no dia 04 de agosto de 1984. </p>
+        <p className="birthdate">
+          Você nasceu no dia {day} de {month} de {year}.
+        </p>
       </FeedbackBox>
 
       <div className="globe">
