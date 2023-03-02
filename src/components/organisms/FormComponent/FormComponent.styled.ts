@@ -2,7 +2,6 @@ import { styled } from "../../../pages/styles/theme";
 
 export const FormContainer = styled("div", {
   background: "$transparentDark900",
-  height: "100%",
   maxWidth: "706px",
   padding: "54px 77px",
   borderRadius: "8px",
@@ -43,6 +42,8 @@ export const FormContainer = styled("div", {
   },
 
   "@bp1": {
+    borderRadius: "0px",
+    border: "none",
     padding: "54px 34px",
   },
 });
