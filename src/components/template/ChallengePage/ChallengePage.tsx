@@ -13,6 +13,7 @@ const ChallengePage = ({
   lastName,
   dateOfBirthday,
 }: ChallengeProps) => {
+  /* Array to transform month numbers into month names */
   let monName = new Array(
     "janeiro",
     "fevereiro",

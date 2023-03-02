@@ -1,16 +1,24 @@
+// THEME
 import { styled } from "../../../pages/styles/theme";
 
 export const ChallengePageContainer = styled("div", {
   padding: "77px 100px",
   height: "100vh",
+  width: "100vw",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   fontFamily: "Poppins",
+  position: "relative",
+  overflow: "hidden",
 
   ".globe": {
     position: "absolute",
     zIndex: "-1",
+  },
+
+  "@bp1": {
+    padding: "0px",
   },
 });
 
@@ -26,7 +34,8 @@ export const FeedbackBox = styled("div", {
   justifyContent: "center",
   alignItems: "center",
   color: "#fff",
-  padding: "93px 0px",
+  padding: "93px 40px",
+  textAlign: "center",
 
   ".user-icon": {
     width: "78px",
@@ -50,5 +59,10 @@ export const FeedbackBox = styled("div", {
   ".birthdate": {
     fontSize: "18px",
     fontWeight: "300",
+  },
+
+  "@bp1": {
+    width: "100vw",
+    height: "100vh",
   },
 });

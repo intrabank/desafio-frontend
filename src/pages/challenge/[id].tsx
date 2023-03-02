@@ -12,33 +12,6 @@ export default function Page({
   bio,
   receiveNotifications,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  /* ===== GET DATE INFO ===== */
-  const date = new Date(dateOfBirthday);
-
-  /* Array to transform month numbers into month names */
-  let monName = new Array(
-    "",
-    "janeiro",
-    "fevereiro",
-    "março",
-    "abril",
-    "Maio",
-    "junho",
-    "agosto",
-    "outubro",
-    "novembro",
-    "dezembro"
-  );
-
-  /* Day */
-  let day = date.getDate();
-
-  /* Month */
-  let month = monName[date.getMonth()];
-
-  /* Month */
-  let year = date.getFullYear();
-
   return (
     <>
       <Head>
