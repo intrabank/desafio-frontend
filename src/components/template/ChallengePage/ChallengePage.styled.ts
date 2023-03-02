@@ -21,11 +21,33 @@ export const FeedbackBox = styled("div", {
   background: "rgba(29, 29, 29, 0.5)",
   borderRadius: "8px",
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
-  alignContent: "center",
+  alignItems: "center",
   color: "#fff",
+  padding: "93px 0px",
+
+  ".user-icon": {
+    width: "78px",
+    height: "78px",
+    background: "#47E0FF",
+    borderRadius: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "40px",
+
+    color: "#000",
+    fontSize: "25px",
+    fontWeight: "600",
+  },
 
   h1: {
     fontFamily: "Poppins",
+  },
+
+  ".birthdate": {
+    fontSize: "18px",
+    fontWeight: "300",
   },
 });

@@ -1,4 +1,4 @@
-import { globalCss } from "./theme";
+import { globalCss, styled } from "./theme";
 
 export const globalStyles = globalCss({
   "*": {
@@ -20,4 +20,12 @@ export const globalStyles = globalCss({
       minHeight: "100vh",
     },
   },
+});
+
+export const Rectangle = styled("div", {
+  background: "$primaryColor",
+  width: "43px",
+  height: "11px",
+  borderRadius: "20px",
+  margin: "16px 0",
 });

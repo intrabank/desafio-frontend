@@ -1,4 +1,5 @@
-import { GlobeContainer, Rectangle, TextContainer } from "./Globe.styled";
+import { GlobeContainer, TextContainer } from "./Globe.styled";
+import { Rectangle } from "../../../pages/styles/global";
 
 const Globe = () => {
   return (
